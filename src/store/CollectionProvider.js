@@ -100,8 +100,8 @@ const CollectionProvider = props => {
   const loadCollectionHandler = async(contract, totalSupply) => {
     let collection = [];
 
-    console.log("contract.methods = ");
-    console.log(contract.methods);
+    // console.log("contract.methods = ");
+    // console.log(contract.methods);
     for(let i = 0; i < totalSupply; i++) {
       const hash = await contract.methods.tokenURIs(i).call();
       try {
@@ -113,19 +113,19 @@ const CollectionProvider = props => {
         const metadata = await response.json();
         const owner = await contract.methods.ownerOf(i + 1).call();
 
-        console.log(metadata.properties);
+        //console.log(metadata.properties);
         collection = [{
           id: i + 1,
           title: metadata.properties.name.description,
           img: metadata.properties.image.description,
           link: metadata.properties.link ? metadata.properties.link.description : '',
           description: metadata.properties.description ? metadata.properties.description.description : '',
-          categories: [],
-          properties: [],
+          categories: metadata.properties.category ? metadata.properties.category : [],
+          properties: metadata.properties.property ? metadata.properties.property : [],
           levels: [],
-          unlockable: false,
-          explicit: false,
-          supply: '',
+          unlockable: metadata.properties.unlockable ? metadata.properties.unlockable.description : '',
+          explicit: metadata.properties.explicit ? metadata.properties.explicit.description : '',
+          supply: metadata.properties.supply ? metadata.properties.supply.description : '' ,
           chain: 'Ethereum',
           owner: owner
         }, ...collection];
@@ -155,12 +155,12 @@ const CollectionProvider = props => {
         img: metadata.properties.image.description,
         link: metadata.properties.link ? metadata.properties.link.description : '',
         description: metadata.properties.description ? metadata.properties.description.description : '',
-        categories: [],
-        properties: [],
+        categories: metadata.properties.category ? metadata.properties.category : [],
+        properties: metadata.properties.property ? metadata.properties.property : [],
         levels: [],
-        unlockable: false,
-        explicit: false,
-        supply: '',
+        unlockable: metadata.properties.unlockable ? metadata.properties.unlockable.description : '',
+        explicit: metadata.properties.explicit ? metadata.properties.explicit.description : '',
+        supply: metadata.properties.supply ? metadata.properties.supply.description : '' ,
         chain: 'Ethereum',
         owner: owner
       };

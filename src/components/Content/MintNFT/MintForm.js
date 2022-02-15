@@ -34,26 +34,25 @@ const MintForm = () => {
   const enteredSupplyHandler = (event) => { setEnteredSupply(event.target.value);  };
 
   const [enteredUnlockable, setenteredUnlockable] = useState(false);
-  const enteredUnlockableHandler = (event) => { setenteredUnlockable(event.target.value);  };
-
+  const enteredUnlockableHandler = (event) => { setenteredUnlockable(event.target.checked);  };
   const [enteredExplicit, setenteredExplicit] = useState(false);
-  const enteredExplicitHandler = (event) => { setenteredExplicit(event.target.value);  };
+  const enteredExplicitHandler = (event) => { setenteredExplicit(event.target.checked);  };
 
   const [enteredCateart, setenteredCateart] = useState(false);
-  const enteredCateartHandler = (event) => { setenteredCateart(event.target.value);  };
+  const enteredCateartHandler = (event) => { setenteredCateart(event.target.checked);  };
   const [enteredCatecoll, setenteredCatecoll] = useState(false);
-  const enteredCatecollHandler = (event) => { setenteredCatecoll(event.target.value);  };
+  const enteredCatecollHandler = (event) => { setenteredCatecoll(event.target.checked);  };
   const [enteredCatedomain, setenteredCatedomain] = useState(false);
-  const enteredCatedomainHandler = (event) => { setenteredCatedomain(event.target.value);  };
-  const [enteredCatemusic, setenteredCatemusic] = useState(false);
-  const enteredCatemusicHandler = (event) => { setenteredCatemusic(event.target.value);  };
+  const enteredCatedomainHandler = (event) => { setenteredCatedomain(event.target.checked);  };
+  const [enteredCatemusic, setenteredCatemusic] = useState( false );
+  const enteredCatemusicHandler = (event) => { setenteredCatemusic(event.target.checked);  };
   const [enteredCateetc, setenteredCateetc] = useState(false);
-  const enteredCateetcHandler = (event) => { setenteredCateetc(event.target.value);  };
+  const enteredCateetcHandler = (event) => { setenteredCateetc(event.target.checked);  };
 
   const [enteredRed, setenteredRed] = useState(false);
-  const enteredRedHandler = (event) => { setenteredRed(event.target.value);  };
+  const enteredRedHandler = (event) => { setenteredRed(event.target.checked);  };
   const [enteredBlue, setenteredBlue] = useState(false);
-  const enteredBlueHandler = (event) => { setenteredBlue(event.target.value);  };
+  const enteredBlueHandler = (event) => { setenteredBlue(event.target.checked);  };
 
   const captureFile = (event) => {
     event.preventDefault();
@@ -76,25 +75,27 @@ const MintForm = () => {
 
     const formIsValid = enteredName && enteredDescription && capturedFileBuffer;
 
+    let enteredCategory = [];
+    enteredCategory.push(enteredCateart);
+    enteredCategory.push(enteredCatecoll);
+    enteredCategory.push(enteredCatedomain);
+    enteredCategory.push(enteredCatemusic);
+    enteredCategory.push(enteredCateetc);
+    console.log(enteredCategory); return;
+    
+    let enteredProperty = [];
+    enteredProperty.push(enteredRed);
+    enteredProperty.push(enteredBlue);
+
     // Upload file to IPFS and push to the blockchain
     const mintNFT = async() => {
+
       // Add file to the IPFS
       const fileAdded = await ipfs.add(capturedFileBuffer);
       if(!fileAdded) {
         console.error('Something went wrong when updloading the file');
         return;
       }
-
-      let enteredCategory = [];
-      enteredCategory.push(enteredCateart);
-      enteredCategory.push(enteredCatecoll);
-      enteredCategory.push(enteredCatedomain);
-      enteredCategory.push(enteredCatemusic);
-      enteredCategory.push(enteredCateetc);
-
-      let enteredProperty = [];
-      enteredProperty.push(enteredRed);
-      enteredProperty.push(enteredBlue);
 
       const metadata = {
         title: "Asset Metadata",
