@@ -5,19 +5,20 @@ import "./NFTCollection.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 
-contract NFTCreator is ReentrancyGuardUpgradeable {
+contract NFTCrator is ReentrancyGuardUpgradeable {
   uint256 listingPrice = 0.025 ether; // minimum price, change for what you want
   NFTCollection nftContract;
 
-  uint public creatorCount;
   using Counters for Counters.Counter;
   Counters.Counter private _items;
   Counters.Counter private _soldItems;
 
-  address payable owner;
+
+  uint      public cratorCount;
+  address   payable owner;
 
   // interface to marketplace item
-    struct CreatorItem {
+    struct CratorItem {
         uint256 itemId;
         // address nftContract;
         uint256 tokenId;
@@ -26,12 +27,12 @@ contract NFTCreator is ReentrancyGuardUpgradeable {
         uint256 price;
         bool sold;
     }
-    mapping(uint256 => CreatorItem) private idToCreatorItem;
+    mapping(uint256 => CratorItem) private idToCratorItem;
 
     // declare a event for when a item is created on marketplace
-    event CreatorItemCreated(
+    event CratorItemCreated(
         uint256 indexed itemId,
-        // address indexed nftContract,
+        // /* address indexed nftContract, */
         uint256 indexed tokenId,
         address seller,
         address owner,
@@ -43,8 +44,10 @@ contract NFTCreator is ReentrancyGuardUpgradeable {
         // owner = payable(msg.sender);
         nftContract = NFTCollection(_nftCollection);
     }
-  // places an item for sale on the marketplace
-  function createCreatorItem(
+
+
+    // places an item for sale on the marketplace
+    function createCratorItem(
         // address nftContract,
         uint256 tokenId,
         uint256 price
@@ -58,7 +61,7 @@ contract NFTCreator is ReentrancyGuardUpgradeable {
         _items.increment();
         uint256 itemId = _items.current();
 
-        idToCreatorItem[itemId] = CreatorItem(
+        idToCratorItem[itemId] = CratorItem(
             itemId,                     //item registerd id
             // nftContract,                //nftContract       -- 
             tokenId,                    //nft item token    --
@@ -71,7 +74,7 @@ contract NFTCreator is ReentrancyGuardUpgradeable {
         //IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId);
         nftContract.transferFrom(msg.sender, address(this), tokenId);
 
-        emit CreatorItemCreated(
+        emit CratorItemCreated(
             itemId,
             // nftContract,
             tokenId,
@@ -84,26 +87,26 @@ contract NFTCreator is ReentrancyGuardUpgradeable {
   
     // creates the sale of a marketplace item
     // transfers ownership of the item, as well as funds between parties
-    function createCreatorSale(
+    function createCratorSale(
             //address nftContract, 
             uint256 itemId)
         public
         payable
         nonReentrant
     {
-        uint256 price = idToCreatorItem[itemId].price;
-        uint256 tokenId = idToCreatorItem[itemId].tokenId;
+        uint256 price = idToCratorItem[itemId].price;
+        uint256 tokenId = idToCratorItem[itemId].tokenId;
 
         require(
             msg.value == price,
             "Please submit the asking price in order to complete the purchase"
         );
 
-        idToCreatorItem[itemId].seller.transfer(msg.value);
+        idToCratorItem[itemId].seller.transfer(msg.value);
         //IERC721(nftContract).transferFrom(address(this), msg.sender, tokenId);
         nftContract.transferFrom(address(this), msg.sender, tokenId);
-        idToCreatorItem[itemId].owner = payable(msg.sender);
-        idToCreatorItem[itemId].sold = true;
+        idToCratorItem[itemId].owner = payable(msg.sender);
+        idToCratorItem[itemId].sold = true;
 
         _soldItems.increment();
 
@@ -111,20 +114,20 @@ contract NFTCreator is ReentrancyGuardUpgradeable {
     }
 
     // returns all unsold marketplace items
-    function fetchCreatorItems()
+    function fetchCratorItems()
         public
         view
-        returns (CreatorItem[] memory)
+        returns (CratorItem[] memory)
     {
         uint256 itemCount = _items.current();
         uint256 unsoldItemCount = _items.current() - _soldItems.current();
         uint256 currentIndex = 0;
 
-        CreatorItem[] memory items = new CreatorItem[](unsoldItemCount);
+        CratorItem[] memory items = new CratorItem[](unsoldItemCount);
         for (uint256 i = 0; i < itemCount; i++) {
-            if (idToCreatorItem[i + 1].owner == address(0)) {
+            if (idToCratorItem[i + 1].owner == address(0)) {
                 uint256 currentId = i + 1;
-                CreatorItem storage currentItem = idToCreatorItem[
+                CratorItem storage currentItem = idToCratorItem[
                     currentId
                 ];
                 items[currentIndex] = currentItem;
@@ -135,22 +138,22 @@ contract NFTCreator is ReentrancyGuardUpgradeable {
     }
 
     // returns only items that a user has purchased
-    function fetchMyNFTs() public view returns (CreatorItem[] memory) {
+    function fetchMyNFTs() public view returns (CratorItem[] memory) {
         uint256 totalItemCount = _items.current();
         uint256 itemCount = 0;
         uint256 currentIndex = 0;
 
         for (uint256 i = 0; i < totalItemCount; i++) {
-            if (idToCreatorItem[i + 1].owner == msg.sender) {
+            if (idToCratorItem[i + 1].owner == msg.sender) {
                 itemCount += 1;
             }
         }
 
-        CreatorItem[] memory items = new CreatorItem[](itemCount);
+        CratorItem[] memory items = new CratorItem[](itemCount);
         for (uint256 i = 0; i < totalItemCount; i++) {
-            if (idToCreatorItem[i + 1].owner == msg.sender) {
+            if (idToCratorItem[i + 1].owner == msg.sender) {
                 uint256 currentId = i + 1;
-                CreatorItem storage currentItem = idToCreatorItem[
+                CratorItem storage currentItem = idToCratorItem[
                     currentId
                 ];
                 items[currentIndex] = currentItem;
@@ -164,24 +167,24 @@ contract NFTCreator is ReentrancyGuardUpgradeable {
     function fetchItemsCreated()
         public
         view
-        returns (CreatorItem[] memory)
+        returns (CratorItem[] memory)
     {
         uint256 totalItemCount = _items.current();
         uint256 itemCount = 0;
         uint256 currentIndex = 0;
 
         for (uint256 i = 0; i < totalItemCount; i++) {
-            if (idToCreatorItem[i + 1].seller == msg.sender) {
+            if (idToCratorItem[i + 1].seller == msg.sender) {
                 itemCount += 1;
             }
         }
 
-        CreatorItem[] memory items = new CreatorItem[](itemCount);
+        CratorItem[] memory items = new CratorItem[](itemCount);
 
         for (uint256 i = 0; i < totalItemCount; i++) {
-            if (idToCreatorItem[i + 1].seller == msg.sender) {
+            if (idToCratorItem[i + 1].seller == msg.sender) {
                 uint256 currentId = i + 1;
-                CreatorItem storage currentItem = idToCreatorItem[
+                CratorItem storage currentItem = idToCratorItem[
                     currentId
                 ];
                 items[currentIndex] = currentItem;

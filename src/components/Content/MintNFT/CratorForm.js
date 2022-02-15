@@ -6,15 +6,15 @@ import CollectionContext from '../../../store/collection-context';
 const ipfsClient = require('ipfs-http-client');
 const ipfs = ipfsClient.create({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' });
 
-const MintForm = () => {  
+const CratorForm = () => {  
   const [enteredName, setEnteredName] = useState('');
   const [descriptionIsValid, setDescriptionIsValid] = useState(true);
 
   const [enteredDescription, setEnteredDescription] = useState('');
   const [nameIsValid, setNameIsValid] = useState(true);
 
-  const [capturedFileBuffer, setCapturedFileBuffer] = useState(null);
-  const [fileIsValid, setFileIsValid] = useState(true);
+  // const [capturedFileBuffer, setCapturedFileBuffer] = useState(null);
+  // const [fileIsValid, setFileIsValid] = useState(true);
 
   const web3Ctx = useContext(Web3Context);
   const collectionCtx = useContext(CollectionContext);
@@ -27,14 +27,12 @@ const MintForm = () => {
     setEnteredDescription(event.target.value);
   };
 
-  const [enteredLink, setEnteredLink] = useState('');
-  const enteredLinkHandler = (event) => { setEnteredLink(event.target.value);  };
-
   const [enteredSupply, setEnteredSupply] = useState('');
   const enteredSupplyHandler = (event) => { setEnteredSupply(event.target.value);  };
 
-  const [enteredUnlockable, setenteredUnlockable] = useState(false);
-  const enteredUnlockableHandler = (event) => { setenteredUnlockable(event.target.checked);  };
+  const [enteredFilepath, setenteredFilepath] = useState('');
+  const enteredFilepathHandler = (event) => { setenteredFilepath(event.target.value);  };
+
   const [enteredExplicit, setenteredExplicit] = useState(false);
   const enteredExplicitHandler = (event) => { setenteredExplicit(event.target.checked);  };
 
@@ -49,31 +47,14 @@ const MintForm = () => {
   const [enteredCateetc, setenteredCateetc] = useState(false);
   const enteredCateetcHandler = (event) => { setenteredCateetc(event.target.checked);  };
 
-  const [enteredRed, setenteredRed] = useState(false);
-  const enteredRedHandler = (event) => { setenteredRed(event.target.checked);  };
-  const [enteredBlue, setenteredBlue] = useState(false);
-  const enteredBlueHandler = (event) => { setenteredBlue(event.target.checked);  };
-
-  const captureFile = (event) => {
-    event.preventDefault();
-
-    const file = event.target.files[0];
-
-    const reader = new window.FileReader();
-    reader.readAsArrayBuffer(file);
-    reader.onloadend = () => {
-      setCapturedFileBuffer(Buffer(reader.result));     
-    }
-  };  
-  
-  const submissionHandler = (event) => {
+ 
+  const submissionCratorHandler = (event) => {
     event.preventDefault();
 
     enteredName ? setNameIsValid(true) : setNameIsValid(false);
     enteredDescription ? setDescriptionIsValid(true) : setDescriptionIsValid(false);
-    capturedFileBuffer ? setFileIsValid(true) : setFileIsValid(false);
 
-    const formIsValid = enteredName && enteredDescription && capturedFileBuffer;
+    const formIsValid = enteredName && enteredDescription && enteredFilepath;// && capturedFileBuffer;
 
     let enteredCategory = [];
     enteredCategory.push(enteredCateart);
@@ -83,19 +64,8 @@ const MintForm = () => {
     enteredCategory.push(enteredCateetc);
     //  console.log(enteredCategory); return;
     
-    let enteredProperty = [];
-    enteredProperty.push(enteredRed);
-    enteredProperty.push(enteredBlue);
-
     // Upload file to IPFS and push to the blockchain
     const mintNFT = async() => {
-
-      // Add file to the IPFS
-      const fileAdded = await ipfs.add(capturedFileBuffer);
-      if(!fileAdded) {
-        console.error('Something went wrong when updloading the file');
-        return;
-      }
 
       const metadata = {
         title: "Asset Metadata",
@@ -111,11 +81,7 @@ const MintForm = () => {
           },
           image: {
             type: "string",
-            description: fileAdded.path
-          },
-          link: {
-            type: "string",
-            description: enteredLink
+            description: enteredFilepath
           },
           supply: {
             type: "string",
@@ -124,14 +90,6 @@ const MintForm = () => {
           category: {
             type: "array",
             description: enteredCategory
-          },
-          property: {
-            type: "array",
-            description: enteredProperty
-          },
-          unlockable: {
-            type: "bool",
-            description: enteredUnlockable
           },
           explicit: {
             type: "bool",
@@ -164,10 +122,9 @@ const MintForm = () => {
 
   const nameClass = nameIsValid? "form-control" : "form-control is-invalid";
   const descriptionClass = descriptionIsValid? "form-control" : "form-control is-invalid";
-  const fileClass = fileIsValid? "form-control" : "form-control is-invalid";
-  
+    
   return(
-    <form onSubmit={submissionHandler}>
+    <form onSubmit={submissionCratorHandler}>
       <div className="row justify-content-center">
         <div className="col-md-2">
           <input
@@ -180,20 +137,20 @@ const MintForm = () => {
         </div>
         <div className="col-md-4">
           <input
-            type='text'
-            className={`${descriptionClass} mb-1`}
-            placeholder='Description...'
-            value={enteredDescription}
-            onChange={enteredDescriptionHandler}
+            type='input'
+            className={`mb-1`}
+            value={enteredFilepath}
+            placeholder='Select Your Cretor File'
+            onChange={enteredFilepathHandler}
           />
         </div>
         <div className="col-md-4">
           <input
             type='text'
-            className={`form-control mb-1`}
-            placeholder='External Link'
-            value={enteredLink}
-            onChange={enteredLinkHandler}
+            className={`${descriptionClass} mb-1`}
+            placeholder='Description...'
+            value={enteredDescription}
+            onChange={enteredDescriptionHandler}
           />
         </div>
         
@@ -210,34 +167,7 @@ const MintForm = () => {
           etc <input type='checkbox' className={`mb-1`} 
             value={enteredCateetc} onChange={enteredCateetcHandler} />
         </div>
-
-        <div className="col-md-6 py-3">
-          Properties:
-          Red <input type='checkbox' className={`mb-1`} 
-            value={enteredRed} onChange={enteredRedHandler} />
-          Blue <input type='checkbox' className={`mb-1`} 
-            value={enteredBlue} onChange={enteredBlueHandler} />
-        </div>
-
-        <div className="col-md-1">
-          <input
-            type='text'
-            className={`form-control mb-1`}
-            placeholder='supply'
-            value={enteredSupply}
-            onChange={enteredSupplyHandler}
-          />
-        </div>
-        <div className="col-md-1">
-          Unlockable
-          <input
-            type='checkbox'
-            className={`mb-1`}
-            value={enteredUnlockable}
-            onChange={enteredUnlockableHandler}
-          />
-        </div>
-        <div className="col-md-1">
+        <div className="col-md-1 py-3">
           Explicit
           <input
             type='checkbox'
@@ -246,11 +176,14 @@ const MintForm = () => {
             onChange={enteredExplicitHandler}
           />
         </div>
-        <div className="col-md-2">
+
+        <div className="col-md-1 py-2">
           <input
-            type='file'
-            className={`${fileClass} mb-1`}
-            onChange={captureFile}
+            type='text'
+            className={`form-control mb-1`}
+            placeholder='supply'
+            value={enteredSupply}
+            onChange={enteredSupplyHandler}
           />
         </div>
       </div>
@@ -259,4 +192,4 @@ const MintForm = () => {
   );
 };
 
-export default MintForm;
+export default CratorForm;
