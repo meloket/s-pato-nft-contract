@@ -8,6 +8,7 @@ import CollectionContext from './store/collection-context';
 import MarketplaceContext from './store/marketplace-context'
 import NFTCollection from './abis/NFTCollection.json';
 import NFTMarketplace from './abis/NFTMarketplace.json';
+import ERC20Loan from './abis/PersonalLoanNFTCollateral.json';
 
 const App = () => {
   const web3Ctx = useContext(Web3Context);
@@ -44,7 +45,8 @@ const App = () => {
       // console.log(collectionCtx.collection);
 
       const mktDeployedNetwork = NFTMarketplace.networks[networkId];
-      const mktContract = marketplaceCtx.loadContract(web3, NFTMarketplace, mktDeployedNetwork);
+      const mktContract = marketplaceCtx.loadContract(web3, NFTMarketplace, ERC20Loan, mktDeployedNetwork);
+                          // marketplaceCtx.loadLoan(web3, ERC20Loan, mktDeployedNetwork);
       
       //console.log("nftContract: "); console.log(nftContract);
 

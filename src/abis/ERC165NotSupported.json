@@ -7,23 +7,23 @@
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
-  "sourceMap": "58:30:95:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "58:30:95:-:0;;;;;",
+  "sourceMap": "58:30:96:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "58:30:96:-:0;;;;;",
   "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.0;\n\ncontract ERC165NotSupported {}\n",
   "sourcePath": "D:\\03.block-chain\\01.miquelTC__nft-marketplace\\test-proj\\nft-marketplace-master\\src\\contracts\\ERC721\\mocks\\ERC165\\ERC165NotSupported.sol",
   "ast": {
     "absolutePath": "project:/src/contracts/ERC721/mocks/ERC165/ERC165NotSupported.sol",
     "exportedSymbols": {
       "ERC165NotSupported": [
-        11822
+        12047
       ]
     },
-    "id": 11823,
+    "id": 12048,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 11821,
+        "id": 12046,
         "literals": [
           "solidity",
           "^",
@@ -31,7 +31,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:95"
+        "src": "33:23:96"
       },
       {
         "abstract": false,
@@ -40,34 +40,34 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 11822,
+        "id": 12047,
         "linearizedBaseContracts": [
-          11822
+          12047
         ],
         "name": "ERC165NotSupported",
-        "nameLocation": "67:18:95",
+        "nameLocation": "67:18:96",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 11823,
-        "src": "58:30:95",
+        "scope": 12048,
+        "src": "58:30:96",
         "usedErrors": []
       }
     ],
-    "src": "33:56:95"
+    "src": "33:56:96"
   },
   "legacyAST": {
     "absolutePath": "project:/src/contracts/ERC721/mocks/ERC165/ERC165NotSupported.sol",
     "exportedSymbols": {
       "ERC165NotSupported": [
-        11822
+        12047
       ]
     },
-    "id": 11823,
+    "id": 12048,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 11821,
+        "id": 12046,
         "literals": [
           "solidity",
           "^",
@@ -75,7 +75,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:95"
+        "src": "33:23:96"
       },
       {
         "abstract": false,
@@ -84,20 +84,20 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 11822,
+        "id": 12047,
         "linearizedBaseContracts": [
-          11822
+          12047
         ],
         "name": "ERC165NotSupported",
-        "nameLocation": "67:18:95",
+        "nameLocation": "67:18:96",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 11823,
-        "src": "58:30:95",
+        "scope": 12048,
+        "src": "58:30:96",
         "usedErrors": []
       }
     ],
-    "src": "33:56:95"
+    "src": "33:56:96"
   },
   "compiler": {
     "name": "solc",
@@ -105,7 +105,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-02-14T12:43:13.813Z",
+  "updatedAt": "2022-02-16T02:59:58.332Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

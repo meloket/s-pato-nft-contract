@@ -1,10 +1,16 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
-import "./ERC721/token/ERC20/IERC20.sol";
-import "./ERC721/token/ERC721/IERC721.sol";
-import "./ERC721/utils/Address.sol";
-import "./ERC721/utils/math/SafeMath.sol";
+// import "./ERC721/token/ERC20/IERC20.sol";
+// import "./ERC721/token/ERC721/IERC721.sol";
+// import "./ERC721/utils/Address.sol";
+// import "./ERC721/utils/math/SafeMath.sol";
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/utils/Address.sol";
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
 // Sablier is abstract class originally
 // contract Sablier {
@@ -255,16 +261,16 @@ contract ERC721Lending is Initializable {
       uint256 _salaryStopTime = _salaryStartTime + (lentERC721List[tokenAddress][tokenId].durationHours * 3600);
       uint256 _actualSalaryAmount = lentERC721List[tokenAddress][tokenId].earningGoal;
 
-      // set platform fees percent for borrowed entry
-      // v1.1
-//      uint256 _feesPercent = 5;
-//      lentERC721List[tokenAddress][tokenId].platformFeesPercent = _feesPercent;
+                  // set platform fees percent for borrowed entry
+                  // v1.1
+            //      uint256 _feesPercent = 5;
+            //      lentERC721List[tokenAddress][tokenId].platformFeesPercent = _feesPercent;
 
-      // reserve fees percent from salary
-//      uint256 _actualSalaryAmountAfterPlatformFees = SafeMath.sub(
-//        _actualSalaryAmount,
-//        SafeMath.mul(SafeMath.div(_actualSalaryAmount, 100), _feesPercent)
-//      );
+                  // reserve fees percent from salary
+            //      uint256 _actualSalaryAmountAfterPlatformFees = SafeMath.sub(
+            //        _actualSalaryAmount,
+            //        SafeMath.mul(SafeMath.div(_actualSalaryAmount, 100), _feesPercent)
+            //      );
 
       // per Sablier docs – deposit amount must be divided by the time delta
       // and then the remainder subtracted from the initial deposit number

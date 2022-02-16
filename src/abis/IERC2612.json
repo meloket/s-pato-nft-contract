@@ -91,18 +91,18 @@
     "absolutePath": "project:/src/contracts/ERC721/interfaces/draft-IERC2612.sol",
     "exportedSymbols": {
       "IERC20Permit": [
-        25094
+        25319
       ],
       "IERC2612": [
-        9868
+        10093
       ]
     },
-    "id": 9869,
+    "id": 10094,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9864,
+        "id": 10089,
         "literals": [
           "solidity",
           "^",
@@ -110,17 +110,17 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "98:23:66"
+        "src": "98:23:67"
       },
       {
         "absolutePath": "project:/src/contracts/ERC721/token/ERC20/extensions/draft-IERC20Permit.sol",
         "file": "../token/ERC20/extensions/draft-IERC20Permit.sol",
-        "id": 9865,
+        "id": 10090,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 9869,
-        "sourceUnit": 25095,
-        "src": "123:58:66",
+        "scope": 10094,
+        "sourceUnit": 25320,
+        "src": "123:58:67",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -129,53 +129,53 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 9866,
+              "id": 10091,
               "name": "IERC20Permit",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 25094,
-              "src": "205:12:66"
+              "referencedDeclaration": 25319,
+              "src": "205:12:67"
             },
-            "id": 9867,
+            "id": 10092,
             "nodeType": "InheritanceSpecifier",
-            "src": "205:12:66"
+            "src": "205:12:67"
           }
         ],
         "canonicalName": "IERC2612",
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 9868,
+        "id": 10093,
         "linearizedBaseContracts": [
-          9868,
-          25094
+          10093,
+          25319
         ],
         "name": "IERC2612",
-        "nameLocation": "193:8:66",
+        "nameLocation": "193:8:67",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 9869,
-        "src": "183:37:66",
+        "scope": 10094,
+        "src": "183:37:67",
         "usedErrors": []
       }
     ],
-    "src": "98:123:66"
+    "src": "98:123:67"
   },
   "legacyAST": {
     "absolutePath": "project:/src/contracts/ERC721/interfaces/draft-IERC2612.sol",
     "exportedSymbols": {
       "IERC20Permit": [
-        25094
+        25319
       ],
       "IERC2612": [
-        9868
+        10093
       ]
     },
-    "id": 9869,
+    "id": 10094,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9864,
+        "id": 10089,
         "literals": [
           "solidity",
           "^",
@@ -183,17 +183,17 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "98:23:66"
+        "src": "98:23:67"
       },
       {
         "absolutePath": "project:/src/contracts/ERC721/token/ERC20/extensions/draft-IERC20Permit.sol",
         "file": "../token/ERC20/extensions/draft-IERC20Permit.sol",
-        "id": 9865,
+        "id": 10090,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 9869,
-        "sourceUnit": 25095,
-        "src": "123:58:66",
+        "scope": 10094,
+        "sourceUnit": 25320,
+        "src": "123:58:67",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -202,36 +202,36 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 9866,
+              "id": 10091,
               "name": "IERC20Permit",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 25094,
-              "src": "205:12:66"
+              "referencedDeclaration": 25319,
+              "src": "205:12:67"
             },
-            "id": 9867,
+            "id": 10092,
             "nodeType": "InheritanceSpecifier",
-            "src": "205:12:66"
+            "src": "205:12:67"
           }
         ],
         "canonicalName": "IERC2612",
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 9868,
+        "id": 10093,
         "linearizedBaseContracts": [
-          9868,
-          25094
+          10093,
+          25319
         ],
         "name": "IERC2612",
-        "nameLocation": "193:8:66",
+        "nameLocation": "193:8:67",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 9869,
-        "src": "183:37:66",
+        "scope": 10094,
+        "src": "183:37:67",
         "usedErrors": []
       }
     ],
-    "src": "98:123:66"
+    "src": "98:123:67"
   },
   "compiler": {
     "name": "solc",
@@ -239,7 +239,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-02-14T12:43:13.622Z",
+  "updatedAt": "2022-02-16T02:59:58.127Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

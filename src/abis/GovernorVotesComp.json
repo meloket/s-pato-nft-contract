@@ -608,78 +608,78 @@
     "absolutePath": "project:/src/contracts/ERC721/governance/extensions/GovernorVotesComp.sol",
     "exportedSymbols": {
       "Address": [
-        29319
+        29544
       ],
       "Context": [
-        29707
+        29932
       ],
       "Counters": [
-        29781
+        30006
       ],
       "ECDSA": [
-        30831
+        31056
       ],
       "EIP712": [
-        31158
+        31383
       ],
       "ERC165": [
-        31492
+        31717
       ],
       "ERC20": [
-        23335
+        23560
       ],
       "ERC20Permit": [
-        25058
+        25283
       ],
       "ERC20Votes": [
-        24699
+        24924
       ],
       "ERC20VotesComp": [
-        24755
+        24980
       ],
       "Governor": [
-        5314
+        5539
       ],
       "GovernorVotesComp": [
-        8921
+        9146
       ],
       "IERC165": [
-        31816
+        32041
       ],
       "IERC20": [
-        23413
+        23638
       ],
       "IERC20Metadata": [
-        24889
+        25114
       ],
       "IERC20Permit": [
-        25094
+        25319
       ],
       "IGovernor": [
-        5550
+        5775
       ],
       "IVotes": [
-        9147
+        9372
       ],
       "Math": [
-        32008
+        32233
       ],
       "SafeCast": [
-        32401
+        32626
       ],
       "Strings": [
-        30210
+        30435
       ],
       "Timers": [
-        30424
+        30649
       ]
     },
-    "id": 8922,
+    "id": 9147,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 8883,
+        "id": 9108,
         "literals": [
           "solidity",
           "^",
@@ -687,29 +687,29 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "112:23:37"
+        "src": "112:23:38"
       },
       {
         "absolutePath": "project:/src/contracts/ERC721/governance/Governor.sol",
         "file": "../Governor.sol",
-        "id": 8884,
+        "id": 9109,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 8922,
-        "sourceUnit": 5315,
-        "src": "137:25:37",
+        "scope": 9147,
+        "sourceUnit": 5540,
+        "src": "137:25:38",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "project:/src/contracts/ERC721/token/ERC20/extensions/ERC20VotesComp.sol",
         "file": "../../token/ERC20/extensions/ERC20VotesComp.sol",
-        "id": 8885,
+        "id": 9110,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 8922,
-        "sourceUnit": 24756,
-        "src": "163:57:37",
+        "scope": 9147,
+        "sourceUnit": 24981,
+        "src": "163:57:38",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -718,71 +718,71 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 8887,
+              "id": 9112,
               "name": "Governor",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 5314,
-              "src": "379:8:37"
+              "referencedDeclaration": 5539,
+              "src": "379:8:38"
             },
-            "id": 8888,
+            "id": 9113,
             "nodeType": "InheritanceSpecifier",
-            "src": "379:8:37"
+            "src": "379:8:38"
           }
         ],
         "canonicalName": "GovernorVotesComp",
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 8886,
+          "id": 9111,
           "nodeType": "StructuredDocumentation",
-          "src": "222:117:37",
+          "src": "222:117:38",
           "text": " @dev Extension of {Governor} for voting weight extraction from a Comp token.\n _Available since v4.3._"
         },
         "fullyImplemented": false,
-        "id": 8921,
+        "id": 9146,
         "linearizedBaseContracts": [
-          8921,
-          5314,
-          5550,
-          31158,
-          31492,
-          31816,
-          29707
+          9146,
+          5539,
+          5775,
+          31383,
+          31717,
+          32041,
+          29932
         ],
         "name": "GovernorVotesComp",
-        "nameLocation": "358:17:37",
+        "nameLocation": "358:17:38",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
             "functionSelector": "fc0c546a",
-            "id": 8891,
+            "id": 9116,
             "mutability": "immutable",
             "name": "token",
-            "nameLocation": "426:5:37",
+            "nameLocation": "426:5:38",
             "nodeType": "VariableDeclaration",
-            "scope": 8921,
-            "src": "394:37:37",
+            "scope": 9146,
+            "src": "394:37:38",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+              "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
               "typeString": "contract ERC20VotesComp"
             },
             "typeName": {
-              "id": 8890,
+              "id": 9115,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 8889,
+                "id": 9114,
                 "name": "ERC20VotesComp",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 24755,
-                "src": "394:14:37"
+                "referencedDeclaration": 24980,
+                "src": "394:14:38"
               },
-              "referencedDeclaration": 24755,
-              "src": "394:14:37",
+              "referencedDeclaration": 24980,
+              "src": "394:14:38",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+                "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
                 "typeString": "contract ERC20VotesComp"
               }
             },
@@ -790,56 +790,56 @@
           },
           {
             "body": {
-              "id": 8901,
+              "id": 9126,
               "nodeType": "Block",
-              "src": "473:31:37",
+              "src": "473:31:38",
               "statements": [
                 {
                   "expression": {
-                    "id": 8899,
+                    "id": 9124,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 8897,
+                      "id": 9122,
                       "name": "token",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8891,
-                      "src": "483:5:37",
+                      "referencedDeclaration": 9116,
+                      "src": "483:5:38",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+                        "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
                         "typeString": "contract ERC20VotesComp"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 8898,
+                      "id": 9123,
                       "name": "token_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8894,
-                      "src": "491:6:37",
+                      "referencedDeclaration": 9119,
+                      "src": "491:6:38",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+                        "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
                         "typeString": "contract ERC20VotesComp"
                       }
                     },
-                    "src": "483:14:37",
+                    "src": "483:14:38",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+                      "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
                       "typeString": "contract ERC20VotesComp"
                     }
                   },
-                  "id": 8900,
+                  "id": 9125,
                   "nodeType": "ExpressionStatement",
-                  "src": "483:14:37"
+                  "src": "483:14:38"
                 }
               ]
             },
-            "id": 8902,
+            "id": 9127,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -847,89 +847,89 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 8895,
+              "id": 9120,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8894,
+                  "id": 9119,
                   "mutability": "mutable",
                   "name": "token_",
-                  "nameLocation": "465:6:37",
+                  "nameLocation": "465:6:38",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8902,
-                  "src": "450:21:37",
+                  "scope": 9127,
+                  "src": "450:21:38",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+                    "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
                     "typeString": "contract ERC20VotesComp"
                   },
                   "typeName": {
-                    "id": 8893,
+                    "id": 9118,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 8892,
+                      "id": 9117,
                       "name": "ERC20VotesComp",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 24755,
-                      "src": "450:14:37"
+                      "referencedDeclaration": 24980,
+                      "src": "450:14:38"
                     },
-                    "referencedDeclaration": 24755,
-                    "src": "450:14:37",
+                    "referencedDeclaration": 24980,
+                    "src": "450:14:38",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+                      "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
                       "typeString": "contract ERC20VotesComp"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "449:23:37"
+              "src": "449:23:38"
             },
             "returnParameters": {
-              "id": 8896,
+              "id": 9121,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "473:0:37"
+              "src": "473:0:38"
             },
-            "scope": 8921,
-            "src": "438:66:37",
+            "scope": 9146,
+            "src": "438:66:38",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "baseFunctions": [
-              5467
+              5692
             ],
             "body": {
-              "id": 8919,
+              "id": 9144,
               "nodeType": "Block",
-              "src": "732:65:37",
+              "src": "732:65:38",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 8915,
+                        "id": 9140,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8905,
-                        "src": "769:7:37",
+                        "referencedDeclaration": 9130,
+                        "src": "769:7:38",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 8916,
+                        "id": 9141,
                         "name": "blockNumber",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8907,
-                        "src": "778:11:37",
+                        "referencedDeclaration": 9132,
+                        "src": "778:11:38",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -948,32 +948,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 8913,
+                        "id": 9138,
                         "name": "token",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8891,
-                        "src": "749:5:37",
+                        "referencedDeclaration": 9116,
+                        "src": "749:5:38",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+                          "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
                           "typeString": "contract ERC20VotesComp"
                         }
                       },
-                      "id": 8914,
+                      "id": 9139,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "getPriorVotes",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 24740,
-                      "src": "749:19:37",
+                      "referencedDeclaration": 24965,
+                      "src": "749:19:38",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_address_$_t_uint256_$returns$_t_uint96_$",
                         "typeString": "function (address,uint256) view external returns (uint96)"
                       }
                     },
-                    "id": 8917,
+                    "id": 9142,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -981,53 +981,53 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "749:41:37",
+                    "src": "749:41:38",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint96",
                       "typeString": "uint96"
                     }
                   },
-                  "functionReturnParameters": 8912,
-                  "id": 8918,
+                  "functionReturnParameters": 9137,
+                  "id": 9143,
                   "nodeType": "Return",
-                  "src": "742:48:37"
+                  "src": "742:48:38"
                 }
               ]
             },
             "documentation": {
-              "id": 8903,
+              "id": 9128,
               "nodeType": "StructuredDocumentation",
-              "src": "510:114:37",
+              "src": "510:114:38",
               "text": " Read the voting weight from the token's built in snapshot mechanism (see {IGovernor-getVotes})."
             },
             "functionSelector": "eb9019d4",
-            "id": 8920,
+            "id": 9145,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getVotes",
-            "nameLocation": "638:8:37",
+            "nameLocation": "638:8:38",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 8909,
+              "id": 9134,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
-              "src": "705:8:37"
+              "src": "705:8:38"
             },
             "parameters": {
-              "id": 8908,
+              "id": 9133,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8905,
+                  "id": 9130,
                   "mutability": "mutable",
                   "name": "account",
-                  "nameLocation": "655:7:37",
+                  "nameLocation": "655:7:38",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8920,
-                  "src": "647:15:37",
+                  "scope": 9145,
+                  "src": "647:15:38",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1035,10 +1035,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 8904,
+                    "id": 9129,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "647:7:37",
+                    "src": "647:7:38",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1049,13 +1049,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 8907,
+                  "id": 9132,
                   "mutability": "mutable",
                   "name": "blockNumber",
-                  "nameLocation": "672:11:37",
+                  "nameLocation": "672:11:38",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8920,
-                  "src": "664:19:37",
+                  "scope": 9145,
+                  "src": "664:19:38",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1063,10 +1063,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8906,
+                    "id": 9131,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "664:7:37",
+                    "src": "664:7:38",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1075,21 +1075,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "646:38:37"
+              "src": "646:38:38"
             },
             "returnParameters": {
-              "id": 8912,
+              "id": 9137,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8911,
+                  "id": 9136,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8920,
-                  "src": "723:7:37",
+                  "scope": 9145,
+                  "src": "723:7:38",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1097,10 +1097,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8910,
+                    "id": 9135,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "723:7:37",
+                    "src": "723:7:38",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1109,98 +1109,98 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "722:9:37"
+              "src": "722:9:38"
             },
-            "scope": 8921,
-            "src": "629:168:37",
+            "scope": 9146,
+            "src": "629:168:38",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           }
         ],
-        "scope": 8922,
-        "src": "340:459:37",
+        "scope": 9147,
+        "src": "340:459:38",
         "usedErrors": []
       }
     ],
-    "src": "112:688:37"
+    "src": "112:688:38"
   },
   "legacyAST": {
     "absolutePath": "project:/src/contracts/ERC721/governance/extensions/GovernorVotesComp.sol",
     "exportedSymbols": {
       "Address": [
-        29319
+        29544
       ],
       "Context": [
-        29707
+        29932
       ],
       "Counters": [
-        29781
+        30006
       ],
       "ECDSA": [
-        30831
+        31056
       ],
       "EIP712": [
-        31158
+        31383
       ],
       "ERC165": [
-        31492
+        31717
       ],
       "ERC20": [
-        23335
+        23560
       ],
       "ERC20Permit": [
-        25058
+        25283
       ],
       "ERC20Votes": [
-        24699
+        24924
       ],
       "ERC20VotesComp": [
-        24755
+        24980
       ],
       "Governor": [
-        5314
+        5539
       ],
       "GovernorVotesComp": [
-        8921
+        9146
       ],
       "IERC165": [
-        31816
+        32041
       ],
       "IERC20": [
-        23413
+        23638
       ],
       "IERC20Metadata": [
-        24889
+        25114
       ],
       "IERC20Permit": [
-        25094
+        25319
       ],
       "IGovernor": [
-        5550
+        5775
       ],
       "IVotes": [
-        9147
+        9372
       ],
       "Math": [
-        32008
+        32233
       ],
       "SafeCast": [
-        32401
+        32626
       ],
       "Strings": [
-        30210
+        30435
       ],
       "Timers": [
-        30424
+        30649
       ]
     },
-    "id": 8922,
+    "id": 9147,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 8883,
+        "id": 9108,
         "literals": [
           "solidity",
           "^",
@@ -1208,29 +1208,29 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "112:23:37"
+        "src": "112:23:38"
       },
       {
         "absolutePath": "project:/src/contracts/ERC721/governance/Governor.sol",
         "file": "../Governor.sol",
-        "id": 8884,
+        "id": 9109,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 8922,
-        "sourceUnit": 5315,
-        "src": "137:25:37",
+        "scope": 9147,
+        "sourceUnit": 5540,
+        "src": "137:25:38",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "project:/src/contracts/ERC721/token/ERC20/extensions/ERC20VotesComp.sol",
         "file": "../../token/ERC20/extensions/ERC20VotesComp.sol",
-        "id": 8885,
+        "id": 9110,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 8922,
-        "sourceUnit": 24756,
-        "src": "163:57:37",
+        "scope": 9147,
+        "sourceUnit": 24981,
+        "src": "163:57:38",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -1239,71 +1239,71 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 8887,
+              "id": 9112,
               "name": "Governor",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 5314,
-              "src": "379:8:37"
+              "referencedDeclaration": 5539,
+              "src": "379:8:38"
             },
-            "id": 8888,
+            "id": 9113,
             "nodeType": "InheritanceSpecifier",
-            "src": "379:8:37"
+            "src": "379:8:38"
           }
         ],
         "canonicalName": "GovernorVotesComp",
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 8886,
+          "id": 9111,
           "nodeType": "StructuredDocumentation",
-          "src": "222:117:37",
+          "src": "222:117:38",
           "text": " @dev Extension of {Governor} for voting weight extraction from a Comp token.\n _Available since v4.3._"
         },
         "fullyImplemented": false,
-        "id": 8921,
+        "id": 9146,
         "linearizedBaseContracts": [
-          8921,
-          5314,
-          5550,
-          31158,
-          31492,
-          31816,
-          29707
+          9146,
+          5539,
+          5775,
+          31383,
+          31717,
+          32041,
+          29932
         ],
         "name": "GovernorVotesComp",
-        "nameLocation": "358:17:37",
+        "nameLocation": "358:17:38",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
             "functionSelector": "fc0c546a",
-            "id": 8891,
+            "id": 9116,
             "mutability": "immutable",
             "name": "token",
-            "nameLocation": "426:5:37",
+            "nameLocation": "426:5:38",
             "nodeType": "VariableDeclaration",
-            "scope": 8921,
-            "src": "394:37:37",
+            "scope": 9146,
+            "src": "394:37:38",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+              "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
               "typeString": "contract ERC20VotesComp"
             },
             "typeName": {
-              "id": 8890,
+              "id": 9115,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 8889,
+                "id": 9114,
                 "name": "ERC20VotesComp",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 24755,
-                "src": "394:14:37"
+                "referencedDeclaration": 24980,
+                "src": "394:14:38"
               },
-              "referencedDeclaration": 24755,
-              "src": "394:14:37",
+              "referencedDeclaration": 24980,
+              "src": "394:14:38",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+                "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
                 "typeString": "contract ERC20VotesComp"
               }
             },
@@ -1311,56 +1311,56 @@
           },
           {
             "body": {
-              "id": 8901,
+              "id": 9126,
               "nodeType": "Block",
-              "src": "473:31:37",
+              "src": "473:31:38",
               "statements": [
                 {
                   "expression": {
-                    "id": 8899,
+                    "id": 9124,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 8897,
+                      "id": 9122,
                       "name": "token",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8891,
-                      "src": "483:5:37",
+                      "referencedDeclaration": 9116,
+                      "src": "483:5:38",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+                        "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
                         "typeString": "contract ERC20VotesComp"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 8898,
+                      "id": 9123,
                       "name": "token_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8894,
-                      "src": "491:6:37",
+                      "referencedDeclaration": 9119,
+                      "src": "491:6:38",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+                        "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
                         "typeString": "contract ERC20VotesComp"
                       }
                     },
-                    "src": "483:14:37",
+                    "src": "483:14:38",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+                      "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
                       "typeString": "contract ERC20VotesComp"
                     }
                   },
-                  "id": 8900,
+                  "id": 9125,
                   "nodeType": "ExpressionStatement",
-                  "src": "483:14:37"
+                  "src": "483:14:38"
                 }
               ]
             },
-            "id": 8902,
+            "id": 9127,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -1368,89 +1368,89 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 8895,
+              "id": 9120,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8894,
+                  "id": 9119,
                   "mutability": "mutable",
                   "name": "token_",
-                  "nameLocation": "465:6:37",
+                  "nameLocation": "465:6:38",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8902,
-                  "src": "450:21:37",
+                  "scope": 9127,
+                  "src": "450:21:38",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+                    "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
                     "typeString": "contract ERC20VotesComp"
                   },
                   "typeName": {
-                    "id": 8893,
+                    "id": 9118,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 8892,
+                      "id": 9117,
                       "name": "ERC20VotesComp",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 24755,
-                      "src": "450:14:37"
+                      "referencedDeclaration": 24980,
+                      "src": "450:14:38"
                     },
-                    "referencedDeclaration": 24755,
-                    "src": "450:14:37",
+                    "referencedDeclaration": 24980,
+                    "src": "450:14:38",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+                      "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
                       "typeString": "contract ERC20VotesComp"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "449:23:37"
+              "src": "449:23:38"
             },
             "returnParameters": {
-              "id": 8896,
+              "id": 9121,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "473:0:37"
+              "src": "473:0:38"
             },
-            "scope": 8921,
-            "src": "438:66:37",
+            "scope": 9146,
+            "src": "438:66:38",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "baseFunctions": [
-              5467
+              5692
             ],
             "body": {
-              "id": 8919,
+              "id": 9144,
               "nodeType": "Block",
-              "src": "732:65:37",
+              "src": "732:65:38",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 8915,
+                        "id": 9140,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8905,
-                        "src": "769:7:37",
+                        "referencedDeclaration": 9130,
+                        "src": "769:7:38",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 8916,
+                        "id": 9141,
                         "name": "blockNumber",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8907,
-                        "src": "778:11:37",
+                        "referencedDeclaration": 9132,
+                        "src": "778:11:38",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1469,32 +1469,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 8913,
+                        "id": 9138,
                         "name": "token",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8891,
-                        "src": "749:5:37",
+                        "referencedDeclaration": 9116,
+                        "src": "749:5:38",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20VotesComp_$24755",
+                          "typeIdentifier": "t_contract$_ERC20VotesComp_$24980",
                           "typeString": "contract ERC20VotesComp"
                         }
                       },
-                      "id": 8914,
+                      "id": 9139,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "getPriorVotes",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 24740,
-                      "src": "749:19:37",
+                      "referencedDeclaration": 24965,
+                      "src": "749:19:38",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_address_$_t_uint256_$returns$_t_uint96_$",
                         "typeString": "function (address,uint256) view external returns (uint96)"
                       }
                     },
-                    "id": 8917,
+                    "id": 9142,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1502,53 +1502,53 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "749:41:37",
+                    "src": "749:41:38",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint96",
                       "typeString": "uint96"
                     }
                   },
-                  "functionReturnParameters": 8912,
-                  "id": 8918,
+                  "functionReturnParameters": 9137,
+                  "id": 9143,
                   "nodeType": "Return",
-                  "src": "742:48:37"
+                  "src": "742:48:38"
                 }
               ]
             },
             "documentation": {
-              "id": 8903,
+              "id": 9128,
               "nodeType": "StructuredDocumentation",
-              "src": "510:114:37",
+              "src": "510:114:38",
               "text": " Read the voting weight from the token's built in snapshot mechanism (see {IGovernor-getVotes})."
             },
             "functionSelector": "eb9019d4",
-            "id": 8920,
+            "id": 9145,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getVotes",
-            "nameLocation": "638:8:37",
+            "nameLocation": "638:8:38",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 8909,
+              "id": 9134,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
-              "src": "705:8:37"
+              "src": "705:8:38"
             },
             "parameters": {
-              "id": 8908,
+              "id": 9133,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8905,
+                  "id": 9130,
                   "mutability": "mutable",
                   "name": "account",
-                  "nameLocation": "655:7:37",
+                  "nameLocation": "655:7:38",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8920,
-                  "src": "647:15:37",
+                  "scope": 9145,
+                  "src": "647:15:38",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1556,10 +1556,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 8904,
+                    "id": 9129,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "647:7:37",
+                    "src": "647:7:38",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1570,13 +1570,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 8907,
+                  "id": 9132,
                   "mutability": "mutable",
                   "name": "blockNumber",
-                  "nameLocation": "672:11:37",
+                  "nameLocation": "672:11:38",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8920,
-                  "src": "664:19:37",
+                  "scope": 9145,
+                  "src": "664:19:38",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1584,10 +1584,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8906,
+                    "id": 9131,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "664:7:37",
+                    "src": "664:7:38",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1596,21 +1596,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "646:38:37"
+              "src": "646:38:38"
             },
             "returnParameters": {
-              "id": 8912,
+              "id": 9137,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8911,
+                  "id": 9136,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8920,
-                  "src": "723:7:37",
+                  "scope": 9145,
+                  "src": "723:7:38",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1618,10 +1618,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8910,
+                    "id": 9135,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "723:7:37",
+                    "src": "723:7:38",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1630,21 +1630,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "722:9:37"
+              "src": "722:9:38"
             },
-            "scope": 8921,
-            "src": "629:168:37",
+            "scope": 9146,
+            "src": "629:168:38",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           }
         ],
-        "scope": 8922,
-        "src": "340:459:37",
+        "scope": 9147,
+        "src": "340:459:38",
         "usedErrors": []
       }
     ],
-    "src": "112:688:37"
+    "src": "112:688:38"
   },
   "compiler": {
     "name": "solc",
@@ -1652,7 +1652,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-02-14T12:43:13.597Z",
+  "updatedAt": "2022-02-16T02:59:58.096Z",
   "devdoc": {
     "details": "Extension of {Governor} for voting weight extraction from a Comp token. _Available since v4.3._",
     "kind": "dev",

@@ -2,13 +2,14 @@
 pragma solidity ^0.8.0;
 
 import "./NFTCollection.sol";
+import "./ERC20LoanSimple.sol";
 
 contract NFTMarketplace {
   uint public offerCount;
   mapping (uint => _Offer) public offers;
   mapping (address => uint) public userFunds;
   NFTCollection nftCollection;
-
+  PersonalLoanNFTCollateral nftCollateral;
 
   struct _Offer {
     uint offerId;
@@ -46,6 +47,12 @@ contract NFTMarketplace {
     offerCount ++;
     offers[offerCount] = _Offer(offerCount, _id, msg.sender, _price, false, false);
     emit Offer(offerCount, _id, msg.sender, _price, false, false);
+  }
+
+  function fundLoan(uint totalLoanAmountETH) public {
+
+    nftCollateral = new PersonalLoanNFTCollateral( uint256(totalLoanAmountETH) );
+    nftCollateral.fundLoan();
   }
 
   function fillOffer(uint _offerId) public payable {

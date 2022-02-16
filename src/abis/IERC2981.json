@@ -64,18 +64,18 @@
     "absolutePath": "project:/src/contracts/ERC721/interfaces/IERC2981.sol",
     "exportedSymbols": {
       "IERC165": [
-        31816
+        32041
       ],
       "IERC2981": [
-        9769
+        9994
       ]
     },
-    "id": 9770,
+    "id": 9995,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9752,
+        "id": 9977,
         "literals": [
           "solidity",
           "^",
@@ -83,17 +83,17 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "107:23:54"
+        "src": "107:23:55"
       },
       {
         "absolutePath": "project:/src/contracts/ERC721/interfaces/IERC165.sol",
         "file": "./IERC165.sol",
-        "id": 9753,
+        "id": 9978,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 9770,
-        "sourceUnit": 9739,
-        "src": "132:23:54",
+        "scope": 9995,
+        "sourceUnit": 9964,
+        "src": "132:23:55",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -102,64 +102,64 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 9755,
+              "id": 9980,
               "name": "IERC165",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 31816,
-              "src": "469:7:54"
+              "referencedDeclaration": 32041,
+              "src": "469:7:55"
             },
-            "id": 9756,
+            "id": 9981,
             "nodeType": "InheritanceSpecifier",
-            "src": "469:7:54"
+            "src": "469:7:55"
           }
         ],
         "canonicalName": "IERC2981",
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 9754,
+          "id": 9979,
           "nodeType": "StructuredDocumentation",
-          "src": "157:289:54",
+          "src": "157:289:55",
           "text": " @dev Interface for the NFT Royalty Standard.\n A standardized way to retrieve royalty payment information for non-fungible tokens (NFTs) to enable universal\n support for royalty payments across all NFT marketplaces and ecosystem participants.\n _Available since v4.5._"
         },
         "fullyImplemented": false,
-        "id": 9769,
+        "id": 9994,
         "linearizedBaseContracts": [
-          9769,
-          31816
+          9994,
+          32041
         ],
         "name": "IERC2981",
-        "nameLocation": "457:8:54",
+        "nameLocation": "457:8:55",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "documentation": {
-              "id": 9757,
+              "id": 9982,
               "nodeType": "StructuredDocumentation",
-              "src": "483:232:54",
+              "src": "483:232:55",
               "text": " @dev Returns how much royalty is owed and to whom, based on a sale price that may be denominated in any unit of\n exchange. The royalty amount is denominated and should be payed in that same unit of exchange."
             },
             "functionSelector": "2a55205a",
-            "id": 9768,
+            "id": 9993,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "royaltyInfo",
-            "nameLocation": "729:11:54",
+            "nameLocation": "729:11:55",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9762,
+              "id": 9987,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9759,
+                  "id": 9984,
                   "mutability": "mutable",
                   "name": "tokenId",
-                  "nameLocation": "749:7:54",
+                  "nameLocation": "749:7:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9768,
-                  "src": "741:15:54",
+                  "scope": 9993,
+                  "src": "741:15:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -167,10 +167,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9758,
+                    "id": 9983,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "741:7:54",
+                    "src": "741:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -180,13 +180,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 9761,
+                  "id": 9986,
                   "mutability": "mutable",
                   "name": "salePrice",
-                  "nameLocation": "766:9:54",
+                  "nameLocation": "766:9:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9768,
-                  "src": "758:17:54",
+                  "scope": 9993,
+                  "src": "758:17:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -194,10 +194,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9760,
+                    "id": 9985,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "758:7:54",
+                    "src": "758:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -206,21 +206,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "740:36:54"
+              "src": "740:36:55"
             },
             "returnParameters": {
-              "id": 9767,
+              "id": 9992,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9764,
+                  "id": 9989,
                   "mutability": "mutable",
                   "name": "receiver",
-                  "nameLocation": "832:8:54",
+                  "nameLocation": "832:8:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9768,
-                  "src": "824:16:54",
+                  "scope": 9993,
+                  "src": "824:16:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -228,10 +228,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 9763,
+                    "id": 9988,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "824:7:54",
+                    "src": "824:7:55",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -242,13 +242,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 9766,
+                  "id": 9991,
                   "mutability": "mutable",
                   "name": "royaltyAmount",
-                  "nameLocation": "850:13:54",
+                  "nameLocation": "850:13:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9768,
-                  "src": "842:21:54",
+                  "scope": 9993,
+                  "src": "842:21:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -256,10 +256,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9765,
+                    "id": 9990,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "842:7:54",
+                    "src": "842:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -268,38 +268,38 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "823:41:54"
+              "src": "823:41:55"
             },
-            "scope": 9769,
-            "src": "720:145:54",
+            "scope": 9994,
+            "src": "720:145:55",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 9770,
-        "src": "447:420:54",
+        "scope": 9995,
+        "src": "447:420:55",
         "usedErrors": []
       }
     ],
-    "src": "107:761:54"
+    "src": "107:761:55"
   },
   "legacyAST": {
     "absolutePath": "project:/src/contracts/ERC721/interfaces/IERC2981.sol",
     "exportedSymbols": {
       "IERC165": [
-        31816
+        32041
       ],
       "IERC2981": [
-        9769
+        9994
       ]
     },
-    "id": 9770,
+    "id": 9995,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9752,
+        "id": 9977,
         "literals": [
           "solidity",
           "^",
@@ -307,17 +307,17 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "107:23:54"
+        "src": "107:23:55"
       },
       {
         "absolutePath": "project:/src/contracts/ERC721/interfaces/IERC165.sol",
         "file": "./IERC165.sol",
-        "id": 9753,
+        "id": 9978,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 9770,
-        "sourceUnit": 9739,
-        "src": "132:23:54",
+        "scope": 9995,
+        "sourceUnit": 9964,
+        "src": "132:23:55",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -326,64 +326,64 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 9755,
+              "id": 9980,
               "name": "IERC165",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 31816,
-              "src": "469:7:54"
+              "referencedDeclaration": 32041,
+              "src": "469:7:55"
             },
-            "id": 9756,
+            "id": 9981,
             "nodeType": "InheritanceSpecifier",
-            "src": "469:7:54"
+            "src": "469:7:55"
           }
         ],
         "canonicalName": "IERC2981",
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 9754,
+          "id": 9979,
           "nodeType": "StructuredDocumentation",
-          "src": "157:289:54",
+          "src": "157:289:55",
           "text": " @dev Interface for the NFT Royalty Standard.\n A standardized way to retrieve royalty payment information for non-fungible tokens (NFTs) to enable universal\n support for royalty payments across all NFT marketplaces and ecosystem participants.\n _Available since v4.5._"
         },
         "fullyImplemented": false,
-        "id": 9769,
+        "id": 9994,
         "linearizedBaseContracts": [
-          9769,
-          31816
+          9994,
+          32041
         ],
         "name": "IERC2981",
-        "nameLocation": "457:8:54",
+        "nameLocation": "457:8:55",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "documentation": {
-              "id": 9757,
+              "id": 9982,
               "nodeType": "StructuredDocumentation",
-              "src": "483:232:54",
+              "src": "483:232:55",
               "text": " @dev Returns how much royalty is owed and to whom, based on a sale price that may be denominated in any unit of\n exchange. The royalty amount is denominated and should be payed in that same unit of exchange."
             },
             "functionSelector": "2a55205a",
-            "id": 9768,
+            "id": 9993,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "royaltyInfo",
-            "nameLocation": "729:11:54",
+            "nameLocation": "729:11:55",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9762,
+              "id": 9987,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9759,
+                  "id": 9984,
                   "mutability": "mutable",
                   "name": "tokenId",
-                  "nameLocation": "749:7:54",
+                  "nameLocation": "749:7:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9768,
-                  "src": "741:15:54",
+                  "scope": 9993,
+                  "src": "741:15:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -391,10 +391,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9758,
+                    "id": 9983,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "741:7:54",
+                    "src": "741:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -404,13 +404,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 9761,
+                  "id": 9986,
                   "mutability": "mutable",
                   "name": "salePrice",
-                  "nameLocation": "766:9:54",
+                  "nameLocation": "766:9:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9768,
-                  "src": "758:17:54",
+                  "scope": 9993,
+                  "src": "758:17:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -418,10 +418,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9760,
+                    "id": 9985,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "758:7:54",
+                    "src": "758:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -430,21 +430,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "740:36:54"
+              "src": "740:36:55"
             },
             "returnParameters": {
-              "id": 9767,
+              "id": 9992,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9764,
+                  "id": 9989,
                   "mutability": "mutable",
                   "name": "receiver",
-                  "nameLocation": "832:8:54",
+                  "nameLocation": "832:8:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9768,
-                  "src": "824:16:54",
+                  "scope": 9993,
+                  "src": "824:16:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -452,10 +452,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 9763,
+                    "id": 9988,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "824:7:54",
+                    "src": "824:7:55",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -466,13 +466,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 9766,
+                  "id": 9991,
                   "mutability": "mutable",
                   "name": "royaltyAmount",
-                  "nameLocation": "850:13:54",
+                  "nameLocation": "850:13:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9768,
-                  "src": "842:21:54",
+                  "scope": 9993,
+                  "src": "842:21:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -480,10 +480,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9765,
+                    "id": 9990,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "842:7:54",
+                    "src": "842:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -492,21 +492,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "823:41:54"
+              "src": "823:41:55"
             },
-            "scope": 9769,
-            "src": "720:145:54",
+            "scope": 9994,
+            "src": "720:145:55",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 9770,
-        "src": "447:420:54",
+        "scope": 9995,
+        "src": "447:420:55",
         "usedErrors": []
       }
     ],
-    "src": "107:761:54"
+    "src": "107:761:55"
   },
   "compiler": {
     "name": "solc",
@@ -514,7 +514,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-02-14T12:43:13.618Z",
+  "updatedAt": "2022-02-16T02:59:58.121Z",
   "devdoc": {
     "details": "Interface for the NFT Royalty Standard. A standardized way to retrieve royalty payment information for non-fungible tokens (NFTs) to enable universal support for royalty payments across all NFT marketplaces and ecosystem participants. _Available since v4.5._",
     "kind": "dev",

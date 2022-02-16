@@ -91,15 +91,15 @@
     "absolutePath": "project:/src/contracts/ERC721/token/ERC20/extensions/draft-IERC20Permit.sol",
     "exportedSymbols": {
       "IERC20Permit": [
-        25094
+        25319
       ]
     },
-    "id": 25095,
+    "id": 25320,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 25060,
+        "id": 25285,
         "literals": [
           "solidity",
           "^",
@@ -107,7 +107,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "114:23:200"
+        "src": "114:23:201"
       },
       {
         "abstract": false,
@@ -116,48 +116,48 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 25061,
+          "id": 25286,
           "nodeType": "StructuredDocumentation",
-          "src": "139:480:200",
+          "src": "139:480:201",
           "text": " @dev Interface of the ERC20 Permit extension allowing approvals to be made via signatures, as defined in\n https://eips.ethereum.org/EIPS/eip-2612[EIP-2612].\n Adds the {permit} method, which can be used to change an account's ERC20 allowance (see {IERC20-allowance}) by\n presenting a message signed by the account. By not relying on {IERC20-approve}, the token holder account doesn't\n need to send a transaction, and thus is not required to hold Ether at all."
         },
         "fullyImplemented": false,
-        "id": 25094,
+        "id": 25319,
         "linearizedBaseContracts": [
-          25094
+          25319
         ],
         "name": "IERC20Permit",
-        "nameLocation": "630:12:200",
+        "nameLocation": "630:12:201",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "documentation": {
-              "id": 25062,
+              "id": 25287,
               "nodeType": "StructuredDocumentation",
-              "src": "649:792:200",
+              "src": "649:792:201",
               "text": " @dev Sets `value` as the allowance of `spender` over ``owner``'s tokens,\n given ``owner``'s signed approval.\n IMPORTANT: The same issues {IERC20-approve} has related to transaction\n ordering also apply here.\n Emits an {Approval} event.\n Requirements:\n - `spender` cannot be the zero address.\n - `deadline` must be a timestamp in the future.\n - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner`\n over the EIP712-formatted function arguments.\n - the signature must use ``owner``'s current nonce (see {nonces}).\n For more information on the signature format, see the\n https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP\n section]."
             },
             "functionSelector": "d505accf",
-            "id": 25079,
+            "id": 25304,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "permit",
-            "nameLocation": "1455:6:200",
+            "nameLocation": "1455:6:201",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 25077,
+              "id": 25302,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25064,
+                  "id": 25289,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "1479:5:200",
+                  "nameLocation": "1479:5:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25079,
-                  "src": "1471:13:200",
+                  "scope": 25304,
+                  "src": "1471:13:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -165,10 +165,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 25063,
+                    "id": 25288,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1471:7:200",
+                    "src": "1471:7:201",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -179,13 +179,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25066,
+                  "id": 25291,
                   "mutability": "mutable",
                   "name": "spender",
-                  "nameLocation": "1502:7:200",
+                  "nameLocation": "1502:7:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25079,
-                  "src": "1494:15:200",
+                  "scope": 25304,
+                  "src": "1494:15:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -193,10 +193,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 25065,
+                    "id": 25290,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1494:7:200",
+                    "src": "1494:7:201",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -207,13 +207,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25068,
+                  "id": 25293,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "1527:5:200",
+                  "nameLocation": "1527:5:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25079,
-                  "src": "1519:13:200",
+                  "scope": 25304,
+                  "src": "1519:13:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -221,10 +221,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25067,
+                    "id": 25292,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1519:7:200",
+                    "src": "1519:7:201",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -234,13 +234,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25070,
+                  "id": 25295,
                   "mutability": "mutable",
                   "name": "deadline",
-                  "nameLocation": "1550:8:200",
+                  "nameLocation": "1550:8:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25079,
-                  "src": "1542:16:200",
+                  "scope": 25304,
+                  "src": "1542:16:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -248,10 +248,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25069,
+                    "id": 25294,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1542:7:200",
+                    "src": "1542:7:201",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -261,13 +261,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25072,
+                  "id": 25297,
                   "mutability": "mutable",
                   "name": "v",
-                  "nameLocation": "1574:1:200",
+                  "nameLocation": "1574:1:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25079,
-                  "src": "1568:7:200",
+                  "scope": 25304,
+                  "src": "1568:7:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -275,10 +275,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 25071,
+                    "id": 25296,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1568:5:200",
+                    "src": "1568:5:201",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -288,13 +288,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25074,
+                  "id": 25299,
                   "mutability": "mutable",
                   "name": "r",
-                  "nameLocation": "1593:1:200",
+                  "nameLocation": "1593:1:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25079,
-                  "src": "1585:9:200",
+                  "scope": 25304,
+                  "src": "1585:9:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -302,10 +302,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 25073,
+                    "id": 25298,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1585:7:200",
+                    "src": "1585:7:201",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -315,13 +315,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25076,
+                  "id": 25301,
                   "mutability": "mutable",
                   "name": "s",
-                  "nameLocation": "1612:1:200",
+                  "nameLocation": "1612:1:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25079,
-                  "src": "1604:9:200",
+                  "scope": 25304,
+                  "src": "1604:9:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -329,10 +329,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 25075,
+                    "id": 25300,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1604:7:200",
+                    "src": "1604:7:201",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -341,48 +341,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1461:158:200"
+              "src": "1461:158:201"
             },
             "returnParameters": {
-              "id": 25078,
+              "id": 25303,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1628:0:200"
+              "src": "1628:0:201"
             },
-            "scope": 25094,
-            "src": "1446:183:200",
+            "scope": 25319,
+            "src": "1446:183:201",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 25080,
+              "id": 25305,
               "nodeType": "StructuredDocumentation",
-              "src": "1635:294:200",
+              "src": "1635:294:201",
               "text": " @dev Returns the current nonce for `owner`. This value must be\n included whenever a signature is generated for {permit}.\n Every successful call to {permit} increases ``owner``'s nonce by one. This\n prevents a signature from being used multiple times."
             },
             "functionSelector": "7ecebe00",
-            "id": 25087,
+            "id": 25312,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "nonces",
-            "nameLocation": "1943:6:200",
+            "nameLocation": "1943:6:201",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 25083,
+              "id": 25308,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25082,
+                  "id": 25307,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "1958:5:200",
+                  "nameLocation": "1958:5:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25087,
-                  "src": "1950:13:200",
+                  "scope": 25312,
+                  "src": "1950:13:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -390,10 +390,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 25081,
+                    "id": 25306,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1950:7:200",
+                    "src": "1950:7:201",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -403,21 +403,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1949:15:200"
+              "src": "1949:15:201"
             },
             "returnParameters": {
-              "id": 25086,
+              "id": 25311,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25085,
+                  "id": 25310,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25087,
-                  "src": "1988:7:200",
+                  "scope": 25312,
+                  "src": "1988:7:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -425,10 +425,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25084,
+                    "id": 25309,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1988:7:200",
+                    "src": "1988:7:201",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -437,48 +437,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1987:9:200"
+              "src": "1987:9:201"
             },
-            "scope": 25094,
-            "src": "1934:63:200",
+            "scope": 25319,
+            "src": "1934:63:201",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 25088,
+              "id": 25313,
               "nodeType": "StructuredDocumentation",
-              "src": "2003:128:200",
+              "src": "2003:128:201",
               "text": " @dev Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}."
             },
             "functionSelector": "3644e515",
-            "id": 25093,
+            "id": 25318,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "DOMAIN_SEPARATOR",
-            "nameLocation": "2198:16:200",
+            "nameLocation": "2198:16:201",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 25089,
+              "id": 25314,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2214:2:200"
+              "src": "2214:2:201"
             },
             "returnParameters": {
-              "id": 25092,
+              "id": 25317,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25091,
+                  "id": 25316,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25093,
-                  "src": "2240:7:200",
+                  "scope": 25318,
+                  "src": "2240:7:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -486,10 +486,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 25090,
+                    "id": 25315,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2240:7:200",
+                    "src": "2240:7:201",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -498,35 +498,35 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2239:9:200"
+              "src": "2239:9:201"
             },
-            "scope": 25094,
-            "src": "2189:60:200",
+            "scope": 25319,
+            "src": "2189:60:201",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 25095,
-        "src": "620:1631:200",
+        "scope": 25320,
+        "src": "620:1631:201",
         "usedErrors": []
       }
     ],
-    "src": "114:2138:200"
+    "src": "114:2138:201"
   },
   "legacyAST": {
     "absolutePath": "project:/src/contracts/ERC721/token/ERC20/extensions/draft-IERC20Permit.sol",
     "exportedSymbols": {
       "IERC20Permit": [
-        25094
+        25319
       ]
     },
-    "id": 25095,
+    "id": 25320,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 25060,
+        "id": 25285,
         "literals": [
           "solidity",
           "^",
@@ -534,7 +534,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "114:23:200"
+        "src": "114:23:201"
       },
       {
         "abstract": false,
@@ -543,48 +543,48 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 25061,
+          "id": 25286,
           "nodeType": "StructuredDocumentation",
-          "src": "139:480:200",
+          "src": "139:480:201",
           "text": " @dev Interface of the ERC20 Permit extension allowing approvals to be made via signatures, as defined in\n https://eips.ethereum.org/EIPS/eip-2612[EIP-2612].\n Adds the {permit} method, which can be used to change an account's ERC20 allowance (see {IERC20-allowance}) by\n presenting a message signed by the account. By not relying on {IERC20-approve}, the token holder account doesn't\n need to send a transaction, and thus is not required to hold Ether at all."
         },
         "fullyImplemented": false,
-        "id": 25094,
+        "id": 25319,
         "linearizedBaseContracts": [
-          25094
+          25319
         ],
         "name": "IERC20Permit",
-        "nameLocation": "630:12:200",
+        "nameLocation": "630:12:201",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "documentation": {
-              "id": 25062,
+              "id": 25287,
               "nodeType": "StructuredDocumentation",
-              "src": "649:792:200",
+              "src": "649:792:201",
               "text": " @dev Sets `value` as the allowance of `spender` over ``owner``'s tokens,\n given ``owner``'s signed approval.\n IMPORTANT: The same issues {IERC20-approve} has related to transaction\n ordering also apply here.\n Emits an {Approval} event.\n Requirements:\n - `spender` cannot be the zero address.\n - `deadline` must be a timestamp in the future.\n - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner`\n over the EIP712-formatted function arguments.\n - the signature must use ``owner``'s current nonce (see {nonces}).\n For more information on the signature format, see the\n https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP\n section]."
             },
             "functionSelector": "d505accf",
-            "id": 25079,
+            "id": 25304,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "permit",
-            "nameLocation": "1455:6:200",
+            "nameLocation": "1455:6:201",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 25077,
+              "id": 25302,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25064,
+                  "id": 25289,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "1479:5:200",
+                  "nameLocation": "1479:5:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25079,
-                  "src": "1471:13:200",
+                  "scope": 25304,
+                  "src": "1471:13:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -592,10 +592,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 25063,
+                    "id": 25288,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1471:7:200",
+                    "src": "1471:7:201",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -606,13 +606,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25066,
+                  "id": 25291,
                   "mutability": "mutable",
                   "name": "spender",
-                  "nameLocation": "1502:7:200",
+                  "nameLocation": "1502:7:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25079,
-                  "src": "1494:15:200",
+                  "scope": 25304,
+                  "src": "1494:15:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -620,10 +620,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 25065,
+                    "id": 25290,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1494:7:200",
+                    "src": "1494:7:201",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -634,13 +634,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25068,
+                  "id": 25293,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "1527:5:200",
+                  "nameLocation": "1527:5:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25079,
-                  "src": "1519:13:200",
+                  "scope": 25304,
+                  "src": "1519:13:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -648,10 +648,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25067,
+                    "id": 25292,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1519:7:200",
+                    "src": "1519:7:201",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -661,13 +661,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25070,
+                  "id": 25295,
                   "mutability": "mutable",
                   "name": "deadline",
-                  "nameLocation": "1550:8:200",
+                  "nameLocation": "1550:8:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25079,
-                  "src": "1542:16:200",
+                  "scope": 25304,
+                  "src": "1542:16:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -675,10 +675,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25069,
+                    "id": 25294,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1542:7:200",
+                    "src": "1542:7:201",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -688,13 +688,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25072,
+                  "id": 25297,
                   "mutability": "mutable",
                   "name": "v",
-                  "nameLocation": "1574:1:200",
+                  "nameLocation": "1574:1:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25079,
-                  "src": "1568:7:200",
+                  "scope": 25304,
+                  "src": "1568:7:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -702,10 +702,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 25071,
+                    "id": 25296,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1568:5:200",
+                    "src": "1568:5:201",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -715,13 +715,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25074,
+                  "id": 25299,
                   "mutability": "mutable",
                   "name": "r",
-                  "nameLocation": "1593:1:200",
+                  "nameLocation": "1593:1:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25079,
-                  "src": "1585:9:200",
+                  "scope": 25304,
+                  "src": "1585:9:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -729,10 +729,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 25073,
+                    "id": 25298,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1585:7:200",
+                    "src": "1585:7:201",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -742,13 +742,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25076,
+                  "id": 25301,
                   "mutability": "mutable",
                   "name": "s",
-                  "nameLocation": "1612:1:200",
+                  "nameLocation": "1612:1:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25079,
-                  "src": "1604:9:200",
+                  "scope": 25304,
+                  "src": "1604:9:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -756,10 +756,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 25075,
+                    "id": 25300,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1604:7:200",
+                    "src": "1604:7:201",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -768,48 +768,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1461:158:200"
+              "src": "1461:158:201"
             },
             "returnParameters": {
-              "id": 25078,
+              "id": 25303,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1628:0:200"
+              "src": "1628:0:201"
             },
-            "scope": 25094,
-            "src": "1446:183:200",
+            "scope": 25319,
+            "src": "1446:183:201",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 25080,
+              "id": 25305,
               "nodeType": "StructuredDocumentation",
-              "src": "1635:294:200",
+              "src": "1635:294:201",
               "text": " @dev Returns the current nonce for `owner`. This value must be\n included whenever a signature is generated for {permit}.\n Every successful call to {permit} increases ``owner``'s nonce by one. This\n prevents a signature from being used multiple times."
             },
             "functionSelector": "7ecebe00",
-            "id": 25087,
+            "id": 25312,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "nonces",
-            "nameLocation": "1943:6:200",
+            "nameLocation": "1943:6:201",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 25083,
+              "id": 25308,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25082,
+                  "id": 25307,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "1958:5:200",
+                  "nameLocation": "1958:5:201",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25087,
-                  "src": "1950:13:200",
+                  "scope": 25312,
+                  "src": "1950:13:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -817,10 +817,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 25081,
+                    "id": 25306,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1950:7:200",
+                    "src": "1950:7:201",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -830,21 +830,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1949:15:200"
+              "src": "1949:15:201"
             },
             "returnParameters": {
-              "id": 25086,
+              "id": 25311,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25085,
+                  "id": 25310,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25087,
-                  "src": "1988:7:200",
+                  "scope": 25312,
+                  "src": "1988:7:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -852,10 +852,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25084,
+                    "id": 25309,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1988:7:200",
+                    "src": "1988:7:201",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -864,48 +864,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1987:9:200"
+              "src": "1987:9:201"
             },
-            "scope": 25094,
-            "src": "1934:63:200",
+            "scope": 25319,
+            "src": "1934:63:201",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 25088,
+              "id": 25313,
               "nodeType": "StructuredDocumentation",
-              "src": "2003:128:200",
+              "src": "2003:128:201",
               "text": " @dev Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}."
             },
             "functionSelector": "3644e515",
-            "id": 25093,
+            "id": 25318,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "DOMAIN_SEPARATOR",
-            "nameLocation": "2198:16:200",
+            "nameLocation": "2198:16:201",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 25089,
+              "id": 25314,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2214:2:200"
+              "src": "2214:2:201"
             },
             "returnParameters": {
-              "id": 25092,
+              "id": 25317,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25091,
+                  "id": 25316,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25093,
-                  "src": "2240:7:200",
+                  "scope": 25318,
+                  "src": "2240:7:201",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -913,10 +913,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 25090,
+                    "id": 25315,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2240:7:200",
+                    "src": "2240:7:201",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -925,21 +925,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2239:9:200"
+              "src": "2239:9:201"
             },
-            "scope": 25094,
-            "src": "2189:60:200",
+            "scope": 25319,
+            "src": "2189:60:201",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 25095,
-        "src": "620:1631:200",
+        "scope": 25320,
+        "src": "620:1631:201",
         "usedErrors": []
       }
     ],
-    "src": "114:2138:200"
+    "src": "114:2138:201"
   },
   "compiler": {
     "name": "solc",
@@ -947,7 +947,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-02-14T12:43:14.997Z",
+  "updatedAt": "2022-02-16T02:59:59.254Z",
   "devdoc": {
     "details": "Interface of the ERC20 Permit extension allowing approvals to be made via signatures, as defined in https://eips.ethereum.org/EIPS/eip-2612[EIP-2612]. Adds the {permit} method, which can be used to change an account's ERC20 allowance (see {IERC20-allowance}) by presenting a message signed by the account. By not relying on {IERC20-approve}, the token holder account doesn't need to send a transaction, and thus is not required to hold Ether at all.",
     "kind": "dev",

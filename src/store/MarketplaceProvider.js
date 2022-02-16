@@ -3,6 +3,7 @@ import { useReducer } from 'react';
 import MarketplaceContext from './marketplace-context';
 
 const defaultMarketplaceState = {
+  // loan:null,
   contract: null,
   offerCount: null,
   offers: [],
@@ -11,8 +12,10 @@ const defaultMarketplaceState = {
 };
 
 const marketplaceReducer = (state, action) => {
+ 
   if(action.type === 'CONTRACT') {    
     return {
+      // loan: action.loan,
       contract: action.contract,
       offerCount: state.offerCount,
       offers: state.offers,
@@ -23,6 +26,7 @@ const marketplaceReducer = (state, action) => {
 
   if(action.type === 'LOADOFFERCOUNT') {    
     return {
+      // loan: state.loan,
       contract: state.contract,
       offerCount: action.offerCount,
       offers: state.offers,
@@ -33,6 +37,7 @@ const marketplaceReducer = (state, action) => {
 
   if(action.type === 'LOADOFFERS') {    
     return {
+      // loan: state.loan,
       contract: state.contract,
       offerCount: state.offerCount,
       offers: action.offers,
@@ -45,6 +50,7 @@ const marketplaceReducer = (state, action) => {
     const offers = state.offers.filter(offer => offer.offerId !== parseInt(action.offerId));
 
     return {
+      // loan: state.loan,
       contract: state.contract,
       offerCount: state.offerCount,
       offers: offers,
@@ -71,6 +77,7 @@ const marketplaceReducer = (state, action) => {
     }    
 
     return {
+      // loan: state.loan,
       contract: state.contract,
       offerCount: state.offerCount,
       offers: offers,
@@ -81,6 +88,7 @@ const marketplaceReducer = (state, action) => {
 
   if(action.type === 'LOADFUNDS') {
     return {
+      // loan: state.loan,
       contract: state.contract,
       offerCount: state.offerCount,
       offers: state.offers,
@@ -91,6 +99,7 @@ const marketplaceReducer = (state, action) => {
 
   if(action.type === 'LOADING') {    
     return {
+      // loan: state.loan,
       contract: state.contract,
       offerCount: state.offerCount,
       offers: state.offers,
@@ -105,9 +114,14 @@ const marketplaceReducer = (state, action) => {
 const MarketplaceProvider = props => {
   const [MarketplaceState, dispatchMarketplaceAction] = useReducer(marketplaceReducer, defaultMarketplaceState);
   
-  const loadContractHandler = (web3, NFTMarketplace, deployedNetwork) => {
+  const loadContractHandler = (web3, NFTMarketplace, ERC20Loan, deployedNetwork) => {
+    //console.log(web3.eth);
     const contract = deployedNetwork ? new web3.eth.Contract(NFTMarketplace.abi, deployedNetwork.address): '';
-    dispatchMarketplaceAction({type: 'CONTRACT', contract: contract}); 
+    // const loan = deployedNetwork ? new web3.eth.Contract(ERC20Loan.abi, deployedNetwork.address): '';
+
+    console.log("contract");
+    console.log(contract);
+    dispatchMarketplaceAction({type: 'CONTRACT', contract: contract}); //, loan: loan
     return contract;
   };
 
@@ -153,11 +167,13 @@ const MarketplaceProvider = props => {
   };
 
   const marketplaceContext = {
+    loan:  MarketplaceState.loan,
     contract: MarketplaceState.contract,
     offerCount: MarketplaceState.offerCount,
     offers: MarketplaceState.offers,
     userFunds: MarketplaceState.userFunds,
     mktIsLoading: MarketplaceState.mktIsLoading,
+    // fundLoan: fundLoanHandler,
     loadContract: loadContractHandler,
     loadOfferCount: loadOfferCountHandler,
     loadOffers: loadOffersHandler,

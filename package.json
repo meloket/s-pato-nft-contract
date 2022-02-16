@@ -13,6 +13,7 @@
     "@openzeppelin/upgrades": "^2.8.0",
     "bootstrap": "^5.0.2",
     "ipfs-http-client": "^51.0.1",
+    "openzeppelin-solidity": "^2.0.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
