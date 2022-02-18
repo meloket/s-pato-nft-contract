@@ -97,6 +97,19 @@ const App = () => {
           console.log(error);
         });
 
+
+        mktContract.events.CollateralOffered()
+        .on('data', (event) => {
+          // marketplaceCtx.updateOffer(event.returnValues.offerId);
+          // collectionCtx.updateOwner(event.returnValues.id, event.returnValues.newOwner);
+          // marketplaceCtx.setMktIsLoading(false);
+          console.log(event);
+        })
+        .on('error', (error) => {
+          console.log(error);
+        });
+
+
         // Event Offer subscription 
         mktContract.events.Offer()
         .on('data', (event) => {

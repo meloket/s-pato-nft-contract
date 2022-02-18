@@ -1,9 +1,9 @@
 {
   "contractName": "AddressUtils",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Utility library of inline functions on addresses\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/AddressUtils.sol\":\"AddressUtils\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/AddressUtils.sol\":{\"keccak256\":\"0xa1ed046c120b6eb266ecc9d46371adb7f2401e05e4cd67b8bed978684ae3e596\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f31f050ac6d6e45ff0b551c21f1544dbc5d02346d9a02c7663120880d38bd0e\",\"dweb:/ipfs/QmcJhZ24oDkYwRmJ1niNoGmzB7cshMGL8nkimT9WjdSiCb\"]}},\"version\":1}",
-  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220370131d6dccd5acda10649e2a58e7b74b7218f1fb9beaaca5723b3e858d4983564736f6c634300080b0033",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220370131d6dccd5acda10649e2a58e7b74b7218f1fb9beaaca5723b3e858d4983564736f6c634300080b0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Utility library of inline functions on addresses\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/AddressUtils.sol\":\"AddressUtils\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/AddressUtils.sol\":{\"keccak256\":\"0xa1ed046c120b6eb266ecc9d46371adb7f2401e05e4cd67b8bed978684ae3e596\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f31f050ac6d6e45ff0b551c21f1544dbc5d02346d9a02c7663120880d38bd0e\",\"dweb:/ipfs/QmcJhZ24oDkYwRmJ1niNoGmzB7cshMGL8nkimT9WjdSiCb\"]}},\"version\":1}",
+  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220bc3e24d5598e0508d53aa78a7765b8dc693718a465c40658167dbd3654080e5e64736f6c634300080c0033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220bc3e24d5598e0508d53aa78a7765b8dc693718a465c40658167dbd3654080e5e64736f6c634300080c0033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
@@ -595,11 +595,11 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.8.11+commit.d7f03943.Emscripten.clang"
+    "version": "0.8.12+commit.f00d7308.Emscripten.clang"
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-02-16T08:50:19.201Z",
+  "updatedAt": "2022-02-18T04:21:36.622Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

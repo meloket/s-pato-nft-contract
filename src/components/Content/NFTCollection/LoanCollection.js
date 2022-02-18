@@ -22,29 +22,30 @@ const LoanCollection = () => {
   const OfferCollateralHandler = (event, id, key) => {
     event.preventDefault();
     const enteredPrice = web3.utils.toWei(priceRefs.current[key].current.value, 'ether');
-    console.log("OfferCollateralHandler, marketplaceCtx : ");
-    console.log(marketplaceCtx);
-    marketplaceCtx.fundLoan(enteredPrice);
+    console.log("OfferCollateralHandler, marketplaceCtx : " + enteredPrice);
 
-    // collectionCtx.contract.methods
-    //   .approve(marketplaceCtx.contract.options.address, id)
-    //   .send({ from: web3Ctx.account })
-      
-    // .on('transactionHash', (hash) => {
-    //   marketplaceCtx.setMktIsLoading(true);
-    // })
-    // .on('receipt', (receipt) => {      
-    //   marketplaceCtx.contract.methods.makeOffer(id, enteredPrice).send({ from: web3Ctx.account })
-    //   .on('error', (error) => {
-    //     window.alert('Something went wrong when pushing a Approve Request to the blockchain');
-    //     marketplaceCtx.setMktIsLoading(false);
-    //   }); 
-    // });
+    collectionCtx.contract.methods.approve(marketplaceCtx.contract.options.address, id)
+      .send({ from: web3Ctx.account })
+      .on('transactionHash', (hash) => {
+        marketplaceCtx.setMktIsLoading(true);
+      })
+      .on('receipt', (receipt) => {      
+          marketplaceCtx.contract.methods.fundLoan(id, enteredPrice)
+              .send({ from: web3Ctx.account })
+              .on('transactionHash', (hash) => {
+                marketplaceCtx.setMktIsLoading(true);
+              })
+              .on('error', (error) => {
+                window.alert('Something went wrong when pushing a Collateral Offer Request to the blockchain');
+                marketplaceCtx.setMktIsLoading(false);
+              });            
+      });           
   };
   
   const AcceptLendHandler = (event) => {    
     // const buyIndex = parseInt(event.target.value);      
-    // marketplaceCtx.contract.methods.fillOffer(marketplaceCtx.offers[buyIndex].offerId).send({ from: web3Ctx.account, value: marketplaceCtx.offers[buyIndex].price })
+    // marketplaceCtx.contract.methods.fillOffer(marketplaceCtx.offers[buyIndex].offerId)
+    //  .send({ from: web3Ctx.account, value: marketplaceCtx.offers[buyIndex].price })
     // .on('transactionHash', (hash) => {
     //   marketplaceCtx.setMktIsLoading(true);
     // })

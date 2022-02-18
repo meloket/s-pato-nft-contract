@@ -114,13 +114,14 @@ const marketplaceReducer = (state, action) => {
 const MarketplaceProvider = props => {
   const [MarketplaceState, dispatchMarketplaceAction] = useReducer(marketplaceReducer, defaultMarketplaceState);
   
-  const loadContractHandler = (web3, NFTMarketplace, ERC20Loan, deployedNetwork) => {
-    //console.log(web3.eth);
-    const contract = deployedNetwork ? new web3.eth.Contract(NFTMarketplace.abi, deployedNetwork.address): '';
-    // const loan = deployedNetwork ? new web3.eth.Contract(ERC20Loan.abi, deployedNetwork.address): '';
+  const fundLoanHandler = (price) => {
+    console.log(price);
+  };
 
-    console.log("contract");
-    console.log(contract);
+  const loadContractHandler = (web3, NFTMarketplace, ERC20Loan, deployedNetwork) => {
+    const contract = deployedNetwork ? new web3.eth.Contract(NFTMarketplace.abi, deployedNetwork.address): '';
+
+    //console.log("contract");    console.log(contract);
     dispatchMarketplaceAction({type: 'CONTRACT', contract: contract}); //, loan: loan
     return contract;
   };
@@ -173,7 +174,7 @@ const MarketplaceProvider = props => {
     offers: MarketplaceState.offers,
     userFunds: MarketplaceState.userFunds,
     mktIsLoading: MarketplaceState.mktIsLoading,
-    // fundLoan: fundLoanHandler,
+    fundLoan: fundLoanHandler,
     loadContract: loadContractHandler,
     loadOfferCount: loadOfferCountHandler,
     loadOffers: loadOffersHandler,

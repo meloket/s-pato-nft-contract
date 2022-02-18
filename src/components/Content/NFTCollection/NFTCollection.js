@@ -26,37 +26,38 @@ const NFTCollection = () => {
 
     const enteredPrice = web3.utils.toWei(priceRefs.current[key].current.value, 'ether');
 
-    collectionCtx.contract.methods
-      .approve(marketplaceCtx.contract.options.address, id)
+    collectionCtx.contract.methods.approve(marketplaceCtx.contract.options.address, id)
       .send({ from: web3Ctx.account })
-      
-    .on('transactionHash', (hash) => {
-      marketplaceCtx.setMktIsLoading(true);
-    })
-    .on('receipt', (receipt) => {      
-      marketplaceCtx.contract.methods.makeOffer(id, enteredPrice).send({ from: web3Ctx.account })
-      .on('error', (error) => {
-        window.alert('Something went wrong when pushing a Approve Request to the blockchain');
-        marketplaceCtx.setMktIsLoading(false);
-      }); 
-    });
+      .on('transactionHash', (hash) => {
+        marketplaceCtx.setMktIsLoading(true);
+      })
+      .on('receipt', (receipt) => {      
+        marketplaceCtx.contract.methods.makeOffer(id, enteredPrice)
+          .send({ from: web3Ctx.account })
+        .on('error', (error) => {
+          window.alert('Something went wrong when pushing a Approve Request to the blockchain');
+          marketplaceCtx.setMktIsLoading(false);
+        }); 
+      });
   };
   
   const buyHandler = (event) => {    
     const buyIndex = parseInt(event.target.value);      
-    marketplaceCtx.contract.methods.fillOffer(marketplaceCtx.offers[buyIndex].offerId).send({ from: web3Ctx.account, value: marketplaceCtx.offers[buyIndex].price })
-    .on('transactionHash', (hash) => {
-      marketplaceCtx.setMktIsLoading(true);
-    })
-    .on('error', (error) => {
-      window.alert('Something went wrong when pushing a Offer Request to the blockchain');
-      marketplaceCtx.setMktIsLoading(false);
-    });            
+    marketplaceCtx.contract.methods.fillOffer(marketplaceCtx.offers[buyIndex].offerId)
+      .send({ from: web3Ctx.account, value: marketplaceCtx.offers[buyIndex].price })
+      .on('transactionHash', (hash) => {
+        marketplaceCtx.setMktIsLoading(true);
+      })
+      .on('error', (error) => {
+        window.alert('Something went wrong when pushing a Offer Request to the blockchain');
+        marketplaceCtx.setMktIsLoading(false);
+      });            
   };
 
   const cancelHandler = (event) => {    
     const cancelIndex = parseInt(event.target.value);
-    marketplaceCtx.contract.methods.cancelOffer(marketplaceCtx.offers[cancelIndex].offerId).send({ from: web3Ctx.account })
+    marketplaceCtx.contract.methods.cancelOffer(marketplaceCtx.offers[cancelIndex].offerId)
+    .send({ from: web3Ctx.account })
     .on('transactionHash', (hash) => {
       marketplaceCtx.setMktIsLoading(true);
     })

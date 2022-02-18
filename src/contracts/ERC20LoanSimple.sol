@@ -4,6 +4,8 @@ pragma experimental ABIEncoderV2;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 //import "./ERC721/token/ERC20/ERC20.sol";
+// import "@nomiclab/builder/console.sol";
+
 
 contract PersonalLoanNFTCollateral is ERC20 {   //ERC20
 
@@ -41,14 +43,14 @@ contract PersonalLoanNFTCollateral is ERC20 {   //ERC20
         // string memory symbol,
         uint256 initialSupply
     ) public ERC20("name", "symbol") {
-        _mint(msg.sender, initialSupply);
+        // _mint(msg.sender, initialSupply);
 
 
         terms = Terms(initialSupply, interestAmountETH_val, block.timestamp, initialSupply);
         contractAddress = address(this);
         lenderAddress = payable(msg.sender); //msg.sender;
         state = LoanState.Created;
-
+        // console.log(LoanState);
     }
 
     // added contruct by josh
@@ -114,6 +116,9 @@ contract PersonalLoanNFTCollateral is ERC20 {   //ERC20
         );
         // Sends collateral to lender and liquidates (destroys) the contract.
         selfdestruct(lenderAddress);
+    }
+    fallback () external {
+        revert();
     }
 
 }
