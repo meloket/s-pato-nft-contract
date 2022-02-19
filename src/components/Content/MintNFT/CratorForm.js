@@ -140,7 +140,7 @@ const CratorForm = () => {
             type='input'
             className={`mb-1`}
             value={enteredFilepath}
-            placeholder='Select Your Cretor File'
+            placeholder='Select Your Crator File'
             onChange={enteredFilepathHandler}
           />
         </div>

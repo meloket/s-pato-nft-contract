@@ -7,7 +7,7 @@ const MarketplaceContext = React.createContext({
   offers: [],
   userFunds: null,
   mktIsLoading: true,
-  fundLoan: () => {},
+  //fundLoan: () => {},
   loadContract: () => {},
   loadOfferCount: () => {},
   loadOffers: () => {},

@@ -68,13 +68,14 @@ const NFTCollection = () => {
   };
  
   //console.log("collectionCtx.collection:"); console.log(collectionCtx.collection);
-
+  var iCount = 0;
   return(
     <div className="row text-center">
       { 
         // console.log("marketplaceCtx = ") , console.log(marketplaceCtx) , 
         // console.log("collectionCtx = ") ,  console.log(collectionCtx) ,
         collectionCtx.collection.map((NFT, key) => {
+          if(iCount++>=10)  return;
         const index = marketplaceCtx.offers ? marketplaceCtx.offers.findIndex(offer => offer.id === NFT.id) : -1;
         const owner = index === -1 ? NFT.owner : marketplaceCtx.offers[index].user;
         const price = index !== -1 ? formatPrice(marketplaceCtx.offers[index].price).toFixed(2) : null;

@@ -43,8 +43,7 @@ contract PersonalLoanNFTCollateral is ERC20 {   //ERC20
         // string memory symbol,
         uint256 initialSupply
     ) public ERC20("name", "symbol") {
-        // _mint(msg.sender, initialSupply);
-
+        _mint(msg.sender, initialSupply);
 
         terms = Terms(initialSupply, interestAmountETH_val, block.timestamp, initialSupply);
         contractAddress = address(this);
@@ -53,7 +52,6 @@ contract PersonalLoanNFTCollateral is ERC20 {   //ERC20
         // console.log(LoanState);
     }
 
-    // added contruct by josh
     // constructor(Terms memory _terms, address _contractAddress) public {
     //     terms = _terms;
     //     contractAddress =  _contractAddress ;

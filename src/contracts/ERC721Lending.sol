@@ -28,8 +28,8 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 //   );
 // }
 contract Sablier {
-  function createSalary(address recipient, uint256 deposit, address tokenAddress, uint256 startTime, uint256 stopTime) public returns(uint256) {}
-  function cancelSalary(uint256 salaryId) public returns (bool) {}
+  function createSalary(address recipient, uint256 deposit, address tokenAddress, uint256 startTime, uint256 stopTime) public returns(uint256) { }
+  function cancelSalary(uint256 salaryId) public returns (bool) { }
   function getSalary(uint256 salaryId) public view returns (
     address company,
     address employee,

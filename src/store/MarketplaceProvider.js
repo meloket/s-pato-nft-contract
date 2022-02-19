@@ -3,7 +3,6 @@ import { useReducer } from 'react';
 import MarketplaceContext from './marketplace-context';
 
 const defaultMarketplaceState = {
-  // loan:null,
   contract: null,
   offerCount: null,
   offers: [],
@@ -15,7 +14,6 @@ const marketplaceReducer = (state, action) => {
  
   if(action.type === 'CONTRACT') {    
     return {
-      // loan: action.loan,
       contract: action.contract,
       offerCount: state.offerCount,
       offers: state.offers,
@@ -37,7 +35,6 @@ const marketplaceReducer = (state, action) => {
 
   if(action.type === 'LOADOFFERS') {    
     return {
-      // loan: state.loan,
       contract: state.contract,
       offerCount: state.offerCount,
       offers: action.offers,
@@ -50,7 +47,6 @@ const marketplaceReducer = (state, action) => {
     const offers = state.offers.filter(offer => offer.offerId !== parseInt(action.offerId));
 
     return {
-      // loan: state.loan,
       contract: state.contract,
       offerCount: state.offerCount,
       offers: offers,
@@ -77,7 +73,6 @@ const marketplaceReducer = (state, action) => {
     }    
 
     return {
-      // loan: state.loan,
       contract: state.contract,
       offerCount: state.offerCount,
       offers: offers,
@@ -118,7 +113,7 @@ const MarketplaceProvider = props => {
     console.log(price);
   };
 
-  const loadContractHandler = (web3, NFTMarketplace, ERC20Loan, deployedNetwork) => {
+  const loadContractHandler = (web3, NFTMarketplace, deployedNetwork) => {
     const contract = deployedNetwork ? new web3.eth.Contract(NFTMarketplace.abi, deployedNetwork.address): '';
 
     //console.log("contract");    console.log(contract);

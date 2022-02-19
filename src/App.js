@@ -8,7 +8,7 @@ import CollectionContext from './store/collection-context';
 import MarketplaceContext from './store/marketplace-context'
 import NFTCollection from './abis/NFTCollection.json';
 import NFTMarketplace from './abis/NFTMarketplace.json';
-import ERC20Loan from './abis/PersonalLoanNFTCollateral.json';
+// import ERC20Loan from './abis/PersonalLoanNFTCollateral.json';
 
 const App = () => {
   const web3Ctx = useContext(Web3Context);
@@ -45,8 +45,7 @@ const App = () => {
       // console.log(collectionCtx.collection);
 
       const mktDeployedNetwork = NFTMarketplace.networks[networkId];
-      const mktContract = marketplaceCtx.loadContract(web3, NFTMarketplace, ERC20Loan, mktDeployedNetwork);
-                          // marketplaceCtx.loadLoan(web3, ERC20Loan, mktDeployedNetwork);
+      const mktContract = marketplaceCtx.loadContract(web3, NFTMarketplace, mktDeployedNetwork);
       
       //console.log("nftContract: "); console.log(nftContract);
 
@@ -103,10 +102,10 @@ const App = () => {
           // marketplaceCtx.updateOffer(event.returnValues.offerId);
           // collectionCtx.updateOwner(event.returnValues.id, event.returnValues.newOwner);
           // marketplaceCtx.setMktIsLoading(false);
-          console.log(event);
+          console.log("event : "); console.log(event);
         })
         .on('error', (error) => {
-          console.log(error);
+          console.log("CollateralOffered error : "); console.log(error);
         });
 
 

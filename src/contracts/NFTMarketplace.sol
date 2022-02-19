@@ -38,12 +38,12 @@ contract NFTMarketplace {
     nftCollection = NFTCollection(_nftCollection);
   }
   
-  function fundLoan(uint _id, uint totalLoanAmountETH) public {
-      nftCollateral = new PersonalLoanNFTCollateral( uint256(totalLoanAmountETH) );
-      nftCollateral.fundLoan();
-      uint _offerId = _id;
-      emit CollateralOffered(_offerId, address(this), msg.sender);
-  }
+  // function fundLoan(uint _id, uint totalLoanAmountETH) public {
+  //     nftCollateral = new PersonalLoanNFTCollateral( uint256(totalLoanAmountETH) );
+  //     nftCollateral.fundLoan();
+  //     uint _offerId = _id;
+  //     emit CollateralOffered(_offerId, address(this), msg.sender);
+  // }
   
   function makeOffer(uint _id, uint _price) public {
 
