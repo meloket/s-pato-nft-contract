@@ -2,35 +2,15 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
-// import "./ERC721/token/ERC20/IERC20.sol";
-// import "./ERC721/token/ERC721/IERC721.sol";
-// import "./ERC721/utils/Address.sol";
-// import "./ERC721/utils/math/SafeMath.sol";
-
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
-// Sablier is abstract class originally
-// contract Sablier {
-//   function createSalary(address recipient, uint256 deposit, address tokenAddress, uint256 startTime, uint256 stopTime) public returns(uint256);
-//   function cancelSalary(uint256 salaryId) public returns (bool);
-//   function getSalary(uint256 salaryId) public view returns (
-//     address company,
-//     address employee,
-//     uint256 salary,
-//     address tokenAddress,
-//     uint256 startTime,
-//     uint256 stopTime,
-//     uint256 remainingBalance,
-//     uint256 rate
-//   );
-// }
-contract Sablier {
-  function createSalary(address recipient, uint256 deposit, address tokenAddress, uint256 startTime, uint256 stopTime) public returns(uint256) { }
-  function cancelSalary(uint256 salaryId) public returns (bool) { }
-  function getSalary(uint256 salaryId) public view returns (
+interface Sablier  {
+  function createSalary(address recipient, uint256 deposit, address tokenAddress, uint256 startTime, uint256 stopTime) external returns(uint256) ;
+  function cancelSalary(uint256 salaryId) external returns (bool) ;
+  function getSalary(uint256 salaryId) external view returns (
     address company,
     address employee,
     uint256 salary,
@@ -39,8 +19,8 @@ contract Sablier {
     uint256 stopTime,
     uint256 remainingBalance,
     uint256 rate
-  ) {}
-}
+  );
+} 
 
 contract ERC721Lending is Initializable {
   address public acceptedPayTokenAddress;
@@ -106,11 +86,13 @@ contract ERC721Lending is Initializable {
     require(lentERC721List[tokenAddress][tokenId].lenderClaimedCollateral == false, 'Lending: Collateral already claimed');
 
     // assuming token transfer is approved
-    IERC721(tokenAddress).transferFrom(msg.sender, address(this), tokenId);
+    address fromOwner = msg.sender;
+    address toAddress = address(this);
+    IERC721(tokenAddress).transferFrom(fromOwner, toAddress, tokenId);
 
     lentERC721List[tokenAddress][tokenId] = ERC721ForLend(durationHours, initialWorth, earningGoal, 0, msg.sender, address(0), false, 0, 0);
 
-    lendersWithTokens.push(ERC721TokenEntry(msg.sender, tokenAddress, tokenId));
+    lendersWithTokens.push(ERC721TokenEntry(fromOwner, tokenAddress, tokenId));
 
     emit ERC721ForLendUpdated(tokenAddress, tokenId);
   }
@@ -179,7 +161,6 @@ contract ERC721Lending is Initializable {
         ) = Sablier(sablierContractAddress).getSalary(_sablierSalaryId);
 
         int256 _balanceNotStreamed = 0;
-        // now = block.timestamp
         if (block.timestamp < _streamStopTime) {
           _balanceNotStreamed = int256(_streamSalaryAmount) - int256(SafeMath.mul(block.timestamp - _streamStartTime, _streamRatePerSecond));
         }
@@ -249,7 +230,9 @@ contract ERC721Lending is Initializable {
           lendersWithTokens[i] = lendersWithTokens[totalCount-1]; // insert last from array
         }
       }
-      // lendersWithTokens.length--; deleted josh
+      //lendersWithTokens.length--;
+      delete lendersWithTokens[lendersWithTokens.length-1];
+      //<--- 
     } else {
       delete lendersWithTokens[0];
     }
@@ -261,16 +244,16 @@ contract ERC721Lending is Initializable {
       uint256 _salaryStopTime = _salaryStartTime + (lentERC721List[tokenAddress][tokenId].durationHours * 3600);
       uint256 _actualSalaryAmount = lentERC721List[tokenAddress][tokenId].earningGoal;
 
-                  // set platform fees percent for borrowed entry
-                  // v1.1
-            //      uint256 _feesPercent = 5;
-            //      lentERC721List[tokenAddress][tokenId].platformFeesPercent = _feesPercent;
+      // set platform fees percent for borrowed entry
+      // v1.1
+//      uint256 _feesPercent = 5;
+//      lentERC721List[tokenAddress][tokenId].platformFeesPercent = _feesPercent;
 
-                  // reserve fees percent from salary
-            //      uint256 _actualSalaryAmountAfterPlatformFees = SafeMath.sub(
-            //        _actualSalaryAmount,
-            //        SafeMath.mul(SafeMath.div(_actualSalaryAmount, 100), _feesPercent)
-            //      );
+      // reserve fees percent from salary
+//      uint256 _actualSalaryAmountAfterPlatformFees = SafeMath.sub(
+//        _actualSalaryAmount,
+//        SafeMath.mul(SafeMath.div(_actualSalaryAmount, 100), _feesPercent)
+//      );
 
       // per Sablier docs – deposit amount must be divided by the time delta
       // and then the remainder subtracted from the initial deposit number

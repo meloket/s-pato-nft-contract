@@ -1,6 +1,10 @@
 import { useReducer } from 'react';
+import { useContext, useRef, createRef } from 'react';
 
 import CollectionContext from './collection-context';
+import web3 from '../connection/web3';
+import Web3Context from '../store/web3-context';
+
 
 const defaultCollectionState = {
   contract: null,
@@ -81,6 +85,8 @@ const collectionReducer = (state, action) => {
 };
 
 const CollectionProvider = props => {
+
+  const web3Ctx = useContext(Web3Context);
   const [CollectionState, dispatchCollectionAction] = useReducer(collectionReducer, defaultCollectionState);
   
   const loadContractHandler = (web3, NFTCollection, deployedNetwork) => {
@@ -97,13 +103,17 @@ const CollectionProvider = props => {
     return totalSupply;
   };
 
-  const loadCollectionHandler = async(contract, totalSupply) => {
+  const loadCollectionHandler = async(contract, totalSupply, account) => {
     let collection = [];
 
-    // console.log("contract.methods = ");
-    // console.log(contract.methods);
+    // console.log("metamask.account = " + account);
+    // console.log("totalSupply : " + totalSupply);
     for(let i = 0; i < totalSupply; i++) {
+      
       const hash = await contract.methods.tokenURIs(i).call();
+
+      // console.log("hash : " + hash);
+      // console.log(`https://ipfs.infura.io/ipfs/${hash}?clear`);
       try {
         const response = await fetch(`https://ipfs.infura.io/ipfs/${hash}?clear`);
         if(!response.ok) {
@@ -112,6 +122,11 @@ const CollectionProvider = props => {
 
         const metadata = await response.json();
         const owner = await contract.methods.ownerOf(i + 1).call();
+      if(i>=10 )
+      {
+        if(owner!=account)        continue;
+      } 
+      console.log("owner : ");        console.log(owner);
 
         //console.log(metadata.properties);
         collection = [{

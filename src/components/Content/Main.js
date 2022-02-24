@@ -3,7 +3,7 @@ import { useContext  } from 'react';
 import MintForm from './MintNFT/MintForm';
 import CratorForm from './MintNFT/CratorForm';
 import NFTCollection from './NFTCollection/NFTCollection';
-import LoanCollection from './NFTCollection/LoanCollection';
+//import LoanCollection from './NFTCollection/LoanCollection';
 import CollectionContext from '../../store/collection-context';
 import MarketplaceContext from '../../store/marketplace-context';
 import Spinner from '../Layout/Spinner';
@@ -16,7 +16,7 @@ const Main = () => {
   return(
     <div className="container-fluid mt-2">
       <div className="row">
-        Create Form :<br />
+        New NFT Mint :<br />
         <main role="main" className="col-lg-12 justify-content-center text-center">
           <div className="content mr-auto ml-auto">            
             {!collectionCtx.nftIsLoading && <MintForm />}
@@ -39,7 +39,7 @@ const Main = () => {
         </main>
       </div>
       
-      <hr/>
+      {/* <hr/>
       <div className="row">
         Loan Collection :<br />
         <main role="main" className="col-lg-12 justify-content-center text-center">
@@ -48,7 +48,7 @@ const Main = () => {
             {collectionCtx.nftIsLoading && <Spinner />}
           </div>
         </main>
-      </div>
+      </div> */}
 
 
     </div>

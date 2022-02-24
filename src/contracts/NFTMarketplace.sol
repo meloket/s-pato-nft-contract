@@ -2,15 +2,13 @@
 pragma solidity ^0.8.0;
 
 import "./NFTCollection.sol";
-import "./ERC20LoanSimple.sol";
 
 contract NFTMarketplace {
   uint public offerCount;
   mapping (uint => _Offer) public offers;
   mapping (address => uint) public userFunds;
   NFTCollection nftCollection;
-  PersonalLoanNFTCollateral nftCollateral;
-
+  
   struct _Offer {
     uint offerId;
     uint id;
