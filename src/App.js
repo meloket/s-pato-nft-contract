@@ -6,8 +6,9 @@ import Main from './components/Content/Main';
 import Web3Context from './store/web3-context';
 import CollectionContext from './store/collection-context';
 import MarketplaceContext from './store/marketplace-context'
-import NFTCollection from './abis/NFTCollection.json';
-import NFTMarketplace from './abis/NFTMarketplace.json';
+
+import NFTCollection from './imported_abis/NFTCollection';    
+import NFTMarketplace from './imported_abis/NFTMarketplace';
 
 const App = () => {
   const web3Ctx = useContext(Web3Context);
@@ -37,26 +38,15 @@ const App = () => {
       const networkId = await web3Ctx.loadNetworkId(web3);
 
       // Load Contracts      
-      const nftDeployedNetwork = NFTCollection.networks[networkId];
-      const nftContract = collectionCtx.loadContract(web3, NFTCollection, nftDeployedNetwork);
+      const nftContract = collectionCtx.loadContract(web3, NFTCollection, account);
+      const mktContract = marketplaceCtx.loadContract(web3, NFTMarketplace, account);
       
-      // console.log("collectionCtx.collection in App.js: ");
-      // console.log(collectionCtx.collection);
-
-      const mktDeployedNetwork = NFTMarketplace.networks[networkId];
-      const mktContract = marketplaceCtx.loadContract(web3, NFTMarketplace, mktDeployedNetwork);
-      
-      //console.log("nftContract: "); console.log(nftContract);
-
       if(nftContract) {        
         // Load total Supply
         const totalSupply = await collectionCtx.loadTotalSupply(nftContract);
-        
-        collectionCtx.changeAccount(account);       
-
+       
         // Load Collection
         collectionCtx.loadCollection(nftContract, totalSupply, account);       
-        //console.log("collectionCtx.collection.length = " + collectionCtx.collection.length);
 
         // Event subscription
         nftContract.events.Transfer()
@@ -71,8 +61,6 @@ const App = () => {
       } else {
         window.alert('NFTCollection contract not deployed to detected network.')
       }
-
-      // console.log("mktContract : "); console.log(mktContract);
 
 
       if(mktContract) {
@@ -97,7 +85,7 @@ const App = () => {
         });
 
         // Event Offer subscription 
-        mktContract.events.Offer()
+        mktContract.events.Offered()
         .on('data', (event) => {
           marketplaceCtx.addOffer(event.returnValues);
           marketplaceCtx.setMktIsLoading(false);
@@ -121,6 +109,11 @@ const App = () => {
         window.alert('NFTMarketplace contract not deployed to detected network.')
       }
 
+      // const lendingContract = new web3.eth.Contract(
+      //   NFTLENDINGABI.abi, 
+      //   ERC721_LENDING_CONTACT_ADDRESS);
+
+      
       collectionCtx.setNftIsLoading(false);
       marketplaceCtx.setMktIsLoading(false);
 
